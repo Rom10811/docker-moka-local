@@ -1,0 +1,69 @@
+FROM debian:stretch
+MAINTAINER Yaltik - Fabien Bourgeois <fabien@yaltik.com>
+
+# http://bugs.python.org/issue19846
+# > At the moment, setting "LANG=C" on a Linux system *fundamentally breaks Python 3*, and that's not OK.
+ENV LANG C.UTF-8
+
+# Odoo dependencies from Debian APT repository
+RUN apt-get update \
+      && apt-get install -y --no-install-recommends \
+        python3-pip python3-pyldap python3-qrcode python3-renderpm \
+        python3-setuptools python3-vobject python3-watchdog python3-dev \
+        build-essential git mercurial curl \
+        libxml2-dev libxslt1-dev libldap2-dev libsasl2-dev libjpeg-dev libpq-dev \
+        libfreetype6-dev libssl1.0-dev \
+        nodejs node-less xz-utils
+
+# Handle Node PATH
+RUN ln -s /usr/bin/nodejs /usr/bin/node
+
+# PostgreSQL 10.x
+RUN apt-get update && apt-get install -y --no-install-recommends gnupg
+RUN echo "deb http://apt.postgresql.org/pub/repos/apt/ stretch-pgdg main" \
+      > /etc/apt/sources.list.d/postgresql.list \
+      && curl https://www.postgresql.org/media/keys/ACCC4CF8.asc | apt-key add - \
+      && apt-get update \
+      && apt-get install -y libpq-dev postgresql-client-10
+
+# WKHTMLTOPDF and fonts
+RUN curl -o wkhtmltox.deb -SL https://github.com/wkhtmltopdf/wkhtmltopdf/releases/download/0.12.5/wkhtmltox_0.12.5-1.stretch_amd64.deb \
+      && echo '7e35a63f9db14f93ec7feeb0fce76b30c08f2057 wkhtmltox.deb' | sha1sum -c \
+      && dpkg --force-depends -i wkhtmltox.deb \
+      && apt-get -y --fix-broken install
+
+# Packages cleanup
+RUN apt-get purge -y --auto-remove \
+      && apt-get clean \
+      && rm -r ./wkhtmltox*
+
+# Create odoo user
+RUN useradd odoo -md /opt/odoo
+
+# Install OCB 11.0 latest
+ENV ODOO_BRANCH 12.0
+WORKDIR /opt/odoo
+# Default user : odoo
+USER odoo
+RUN mkdir pipcache data backups extra-addons custom-addons
+RUN git clone -b ${ODOO_BRANCH} --depth 1 https://github.com/OCA/OCB.git
+# PATH update
+RUN echo 'export PATH="$PATH:$HOME/.local/bin/"' >> /opt/odoo/.profile
+RUN pip3 install --user -U pip
+RUN .local/bin/pip3 install --user -r OCB/requirements.txt
+RUN .local/bin/pip3 install --user phonenumbers
+
+# Launch scripts
+COPY ./launch12.sh ./launch.sh
+COPY ./genconf.sh ./
+
+# Post-install tasks
+RUN touch odoo.conf
+
+# Odoo default ports
+EXPOSE 8069 8072
+
+# Volumes : data dir for filestore and addons
+VOLUME /opt/odoo/data
+
+CMD [ "bash", "launch.sh" ]
