@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+
+  <template id="preview_sale_document" inherit_id="sale.sale_order_portal_content">
+    <xpath expr="//div[@class='row'][1]" position="after">
+      <!-- Groups with the new fields -->
+      <h3 t-field="sale_order.moka_sejour_titre_devis"/>
+
+      <div class="mb32 bg-100" style="border: 1px solid #e4e4e4;">
+        <div class="row">
+          <div t-if="sale_order.moka_is_sejour_devis" t-att-class="'col-lg-4 mt-2' if sale_order.moka_nombre_personnes_devis != 0 else 'col-lg-6 mt-2'" style="text-align:center;">
+            <t t-set="hour_d" t-value="env['sale.order']._get_hour_start(sale_order.name)"/>
+            <strong>Benefit start:</strong>
+            <p>
+              <span t-field="sale_order.moka_sejour_debut_devis"/>
+              <t t-if="hour_d != '0:00'" t-esc="hour_d"/>
+            </p>
+          </div>
+          <div t-if="sale_order.moka_is_sejour_devis" t-att-class="'col-lg-4 mt-2' if sale_order.moka_nombre_personnes_devis != 0 else 'col-lg-6 mt-2'" style="text-align:center;">
+            <t t-set="hour_f" t-value="env['sale.order']._get_hour_end(sale_order.name)"/>
+            <strong>Benefit end:</strong>
+            <p>
+              <span t-field="sale_order.moka_sejour_fin_devis"/>
+              <t t-if="hour_f != '0:00'" t-esc="hour_f"/>
+            </p>
+          </div>
+          <div t-if="sale_order.moka_is_sejour_devis and sale_order.moka_nombre_personnes_devis != 0" t-att-class="'col-lg-4 mt-2' if sale_order.moka_nombre_personnes_devis != 0 else 'col-lg-6 mt-2'" style="text-align:center;">
+            <strong>Person(s):</strong>
+            <p t-field="sale_order.moka_nombre_personnes_devis"/>
+          </div>
+        </div>
+      </div>
+    </xpath>
+
+    <!-- Add the price / person and price / person HT at the bottom of the page -->
+    <xpath expr="//div[@id='total']/div/table/tr[1]" position="after">
+      <tr t-if="sale_order.moka_is_sejour_devis and sale_order.moka_nombre_personnes_devis != 0" class="border-black o_subtotal" style="">
+        <td>Price / Person HT</td>
+        <td class="text-right">
+          <span t-field="sale_order.moka_prix_pp_ht_devis"/>
+        </td>
+      </tr>
+    </xpath>
+
+    <!-- Update the pp total -->
+    <xpath expr="//div[@id='total']/div/table/tr[3]" position="after">
+      <tr t-if="sale_order.moka_is_sejour_devis and sale_order.moka_nombre_personnes_devis != 0" class="border-black o_subtotal" style="">
+        <td>Price / Person</td>
+        <td class="text-right">
+          <span t-field="sale_order.moka_prix_pp_ht_devis"/>
+        </td>
+      </tr>
+    </xpath>
+
+  </template>
+
+</odoo>
