@@ -40,7 +40,7 @@ ENV GITLAB_PASS MoK%40BoT2020
 RUN mkdir -p /opt/odoo/extra-addons/moka
 WORKDIR /opt/odoo/extra-addons/moka
 # Test branches for MOKA code
-RUN git clone --depth 1 -b 12.0 https://$GITLAB_USER:$GITLAB_PASS@gitlab.com/moka_fr/moka-billetterie.git moka_billetterie
+RUN git clone --depth 1 -b 12.0-dev https://$GITLAB_USER:$GITLAB_PASS@gitlab.com/moka_fr/moka-billetterie.git moka_billetterie
 RUN git clone --depth 1 -b 12.0-dev https://$GITLAB_USER:$GITLAB_PASS@gitlab.com/moka_fr/moka-depot-vente.git moka_depot_vente
 
 # Custom configuration (MUK)
