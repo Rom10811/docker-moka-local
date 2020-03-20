@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+
+    <template id="report_sale_document_image" inherit_id="sale.report_saleorder_document">
+      <!-- Add the column image's content if the show_image button is check -->
+      <xpath expr="//div[@class='page']/table/tbody/t[2]/tr/t[1]/td[1]" position="replace">
+        <td>
+          <div class="container">
+            <div class="row">
+              <div t-att-class="'col-2' if doc.moka_images_show == 'small'
+                                      else 'col-3' if doc.moka_images_show == 'medium'
+                                      else 'col-4' if doc.moka_images_show == 'large'
+                                      else ''">
+                <img t-att-src="'data:image/png;base64,%s' % env['sale.order'].get_image(line.id)"
+                  t-att-style="'display: none;' if doc.moka_images_show == 'none'
+                                else 'max-width: 100%;'"/>
+              </div>
+              <div t-att-class="'col-10' if doc.moka_images_show == 'small'
+                                else 'col-9' if doc.moka_images_show == 'medium'
+                                else 'col-8' if doc.moka_images_show == 'large'
+                                else 'col-12'">
+                <span t-field="line.name"/>
+              </div>
+            </div>
+          </div>
+        </td>
+      </xpath>
+
+    </template>
+
+</odoo>

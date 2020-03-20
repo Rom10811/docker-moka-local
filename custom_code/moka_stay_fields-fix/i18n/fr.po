@@ -1,0 +1,247 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+#	* moka_stay_fields
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 12.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2019-07-03 08:40+0000\n"
+"PO-Revision-Date: 2019-07-12 12:12+0200\n"
+"Last-Translator: <>\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: moka_stay_fields
+#: model_terms:ir.ui.view,arch_db:moka_stay_fields.view_crm_form_inherit
+msgid "<span class=\"o_stat_text\">Simultaneous</span>"
+msgstr "<span class=\"o_stat_text\">Simultané</span>"
+
+#. module: moka_stay_fields
+#: model_terms:ir.ui.view,arch_db:moka_stay_fields.preview_sale_document
+#: model_terms:ir.ui.view,arch_db:moka_stay_fields.report_invoice_pdf
+#: model_terms:ir.ui.view,arch_db:moka_stay_fields.report_sale_document
+msgid "<strong>Benefit end:</strong>"
+msgstr "<strong>Fin de la prestation:</strong>"
+
+#. module: moka_stay_fields
+#: model_terms:ir.ui.view,arch_db:moka_stay_fields.preview_sale_document
+#: model_terms:ir.ui.view,arch_db:moka_stay_fields.report_invoice_pdf
+#: model_terms:ir.ui.view,arch_db:moka_stay_fields.report_sale_document
+msgid "<strong>Benefit start:</strong>"
+msgstr "<strong>Début de la prestation:</strong>"
+
+#. module: moka_stay_fields
+#: model_terms:ir.ui.view,arch_db:moka_stay_fields.preview_sale_document
+#: model_terms:ir.ui.view,arch_db:moka_stay_fields.report_invoice_pdf
+#: model_terms:ir.ui.view,arch_db:moka_stay_fields.report_sale_document
+msgid "<strong>Person(s):</strong>"
+msgstr "<strong>Personne(s):</strong>"
+
+#. module: moka_stay_fields
+#: model:ir.model.fields,field_description:moka_stay_fields.field_crm_lead__moka_is_full_day
+#: model:ir.model.fields,field_description:moka_stay_fields.field_sale_order__moka_is_full_day_devis
+msgid "All day"
+msgstr "Journée entière"
+
+#. module: moka_stay_fields
+#: model:ir.model.fields,field_description:moka_stay_fields.field_account_invoice__moka_sejour_titre_invoice
+#: model:ir.model.fields,field_description:moka_stay_fields.field_crm_lead__moka_sejour_titre
+#: model:ir.model.fields,field_description:moka_stay_fields.field_sale_order__moka_sejour_titre_devis
+#: model:ir.model.fields,field_description:moka_stay_fields.field_sale_order_template__moka_sejour_titre_md
+msgid "Benefit title"
+msgstr "Titre de la prestation"
+
+#. module: moka_stay_fields
+#: model:ir.model.fields,field_description:moka_stay_fields.field_calendar_event__crm_id
+#: model_terms:ir.ui.view,arch_db:moka_stay_fields.view_calendar_form__popup_inherit
+#: model_terms:ir.ui.view,arch_db:moka_stay_fields.view_calendar_form_inherit
+msgid "CRM"
+msgstr ""
+
+#. module: moka_stay_fields
+#: model:ir.model.fields,field_description:moka_stay_fields.field_crm_lead__calendar_id_crm
+msgid "Calendar Id Crm"
+msgstr ""
+
+#. module: moka_stay_fields
+#: model:ir.model.fields,help:moka_stay_fields.field_crm_lead__moka_is_full_day
+#: model:ir.model.fields,help:moka_stay_fields.field_sale_order__moka_is_full_day_devis
+msgid "Check to fix an event all the day."
+msgstr "Dure toute la journée"
+
+#. module: moka_stay_fields
+#: model:ir.model.fields,help:moka_stay_fields.field_account_invoice__moka_sejour_fin_invoice
+#: model:ir.model.fields,help:moka_stay_fields.field_crm_lead__moka_sejour_fin
+#: model:ir.model.fields,help:moka_stay_fields.field_sale_order__moka_sejour_fin_devis
+#: model:ir.model.fields,help:moka_stay_fields.field_sale_order_template__moka_sejour_fin_md
+msgid "Ending date and hour of the benefit."
+msgstr "Date et heure de fin de la prestation"
+
+#. module: moka_stay_fields
+#: model:ir.model.fields,field_description:moka_stay_fields.field_account_invoice__moka_sejour_fin_invoice
+#: model:ir.model.fields,field_description:moka_stay_fields.field_crm_lead__moka_sejour_fin
+#: model:ir.model.fields,field_description:moka_stay_fields.field_sale_order__moka_sejour_fin_devis
+#: model:ir.model.fields,field_description:moka_stay_fields.field_sale_order_template__moka_sejour_fin_md
+msgid "Ending day"
+msgstr "Jour de fin"
+
+#. module: moka_stay_fields
+#: model:ir.model.fields,field_description:moka_stay_fields.field_account_invoice__moka_heure_fin_invoice
+#: model:ir.model.fields,field_description:moka_stay_fields.field_crm_lead__moka_heure_fin
+#: model:ir.model.fields,field_description:moka_stay_fields.field_sale_order__moka_heure_fin_devis
+#: model:ir.model.fields,field_description:moka_stay_fields.field_sale_order_template__moka_heure_fin_md
+msgid "Ending hour"
+msgstr "Heure de fin"
+
+#. module: moka_stay_fields
+#: model:ir.model,name:moka_stay_fields.model_calendar_event
+msgid "Event"
+msgstr "Évènement"
+
+#. module: moka_stay_fields
+#: model:ir.model.fields,field_description:moka_stay_fields.field_crm_lead__moka_number_event
+msgid "Events"
+msgstr "Évènements"
+
+#. module: moka_stay_fields
+#: model:ir.model.fields,help:moka_stay_fields.field_account_invoice__moka_is_sejour_invoice
+msgid "If checked, display all the the fields and options to build a benefit order"
+msgstr "Si coché, affiche l'ensemble des champs pour entrer les options d'une prestation."
+
+#. module: moka_stay_fields
+#: model:ir.model.fields,help:moka_stay_fields.field_crm_lead__moka_is_sejour
+#: model:ir.model.fields,help:moka_stay_fields.field_sale_order__moka_is_sejour_devis
+#: model:ir.model.fields,help:moka_stay_fields.field_sale_order_template__moka_is_sejour_md
+msgid "If checked, display all the the fields and options to build a benefit order."
+msgstr "Si coché, affiche l'ensemble des champs pour entrer les options d'une prestation."
+
+#. module: moka_stay_fields
+#: model:ir.model,name:moka_stay_fields.model_account_invoice
+msgid "Invoice"
+msgstr "Facture"
+
+#. module: moka_stay_fields
+#: model:ir.model,name:moka_stay_fields.model_crm_lead
+msgid "Lead/Opportunity"
+msgstr "Piste/opportunité"
+
+#. module: moka_stay_fields
+#: model:ir.model.fields,field_description:moka_stay_fields.field_account_invoice__moka_nombre_personnes_invoice
+#: model:ir.model.fields,field_description:moka_stay_fields.field_crm_lead__moka_nombre_personnes
+#: model:ir.model.fields,field_description:moka_stay_fields.field_sale_order__moka_nombre_personnes_devis
+#: model:ir.model.fields,field_description:moka_stay_fields.field_sale_order_template__moka_nombre_personnes_md
+msgid "Number of persons"
+msgstr "Nombre de personnes"
+
+#. module: moka_stay_fields
+#: model:ir.model.fields,help:moka_stay_fields.field_account_invoice__moka_nombre_personnes_invoice
+#: model:ir.model.fields,help:moka_stay_fields.field_crm_lead__moka_nombre_personnes
+#: model:ir.model.fields,help:moka_stay_fields.field_sale_order__moka_nombre_personnes_devis
+#: model:ir.model.fields,help:moka_stay_fields.field_sale_order_template__moka_nombre_personnes_md
+msgid "Number of persons participating in the benefit."
+msgstr "Nombre de personnes participant à la prestation."
+
+#. module: moka_stay_fields
+#: model:ir.model.fields,field_description:moka_stay_fields.field_account_invoice__moka_is_sejour_invoice
+#: model:ir.model.fields,field_description:moka_stay_fields.field_crm_lead__moka_is_sejour
+#: model:ir.model.fields,field_description:moka_stay_fields.field_sale_order__moka_is_sejour_devis
+#: model:ir.model.fields,field_description:moka_stay_fields.field_sale_order_template__moka_is_sejour_md
+msgid "Packaged benefit"
+msgstr "Prestation"
+
+#. module: moka_stay_fields
+#: model:ir.model.fields,field_description:moka_stay_fields.field_account_invoice__moka_prix_pp_invoice
+#: model:ir.model.fields,field_description:moka_stay_fields.field_crm_lead__moka_prix_pp
+#: model:ir.model.fields,field_description:moka_stay_fields.field_sale_order__moka_prix_pp_devis
+#: model:ir.model.fields,field_description:moka_stay_fields.field_sale_order_template__moka_prix_pp_md
+#: model_terms:ir.ui.view,arch_db:moka_stay_fields.preview_sale_document
+#: model_terms:ir.ui.view,arch_db:moka_stay_fields.report_invoice_pdf
+#: model_terms:ir.ui.view,arch_db:moka_stay_fields.report_sale_document
+msgid "Price / Person"
+msgstr "Prix / Personne"
+
+#. module: moka_stay_fields
+#: model:ir.model.fields,field_description:moka_stay_fields.field_account_invoice__moka_prix_pp_ht_invoice
+#: model:ir.model.fields,field_description:moka_stay_fields.field_sale_order__moka_prix_pp_ht_devis
+#: model_terms:ir.ui.view,arch_db:moka_stay_fields.preview_sale_document
+#: model_terms:ir.ui.view,arch_db:moka_stay_fields.report_invoice_pdf
+#: model_terms:ir.ui.view,arch_db:moka_stay_fields.report_sale_document
+msgid "Price / Person HT"
+msgstr "Prix / Personne HT"
+
+#. module: moka_stay_fields
+#: model:ir.model,name:moka_stay_fields.model_sale_order_template
+msgid "Quotation Template"
+msgstr "Modèle de devis"
+
+#. module: moka_stay_fields
+#: model:ir.model,name:moka_stay_fields.model_sale_order
+msgid "Sale Order"
+msgstr "Bon de commande"
+
+#. module: moka_stay_fields
+#: model:ir.model.fields,help:moka_stay_fields.field_account_invoice__moka_sejour_titre_invoice
+#: model:ir.model.fields,help:moka_stay_fields.field_crm_lead__moka_sejour_titre
+#: model:ir.model.fields,help:moka_stay_fields.field_sale_order__moka_sejour_titre_devis
+#: model:ir.model.fields,help:moka_stay_fields.field_sale_order_template__moka_sejour_titre_md
+msgid "Specific title to the current benefit."
+msgstr "Titre de la prestation"
+
+#. module: moka_stay_fields
+#: model:ir.model.fields,help:moka_stay_fields.field_account_invoice__moka_sejour_debut_invoice
+#: model:ir.model.fields,help:moka_stay_fields.field_crm_lead__moka_sejour_debut
+#: model:ir.model.fields,help:moka_stay_fields.field_sale_order__moka_sejour_debut_devis
+#: model:ir.model.fields,help:moka_stay_fields.field_sale_order_template__moka_sejour_debut_md
+msgid "Starting date and hour of the benefit."
+msgstr "Date et heure de début de la prestation"
+
+#. module: moka_stay_fields
+#: model:ir.model.fields,field_description:moka_stay_fields.field_account_invoice__moka_sejour_debut_invoice
+#: model:ir.model.fields,field_description:moka_stay_fields.field_crm_lead__moka_sejour_debut
+#: model:ir.model.fields,field_description:moka_stay_fields.field_sale_order__moka_sejour_debut_devis
+#: model:ir.model.fields,field_description:moka_stay_fields.field_sale_order_template__moka_sejour_debut_md
+msgid "Starting day"
+msgstr "Jour de début"
+
+#. module: moka_stay_fields
+#: model:ir.model.fields,field_description:moka_stay_fields.field_account_invoice__moka_heure_debut_invoice
+#: model:ir.model.fields,field_description:moka_stay_fields.field_crm_lead__moka_heure_debut
+#: model:ir.model.fields,field_description:moka_stay_fields.field_sale_order__moka_heure_debut_devis
+#: model:ir.model.fields,field_description:moka_stay_fields.field_sale_order_template__moka_heure_debut_md
+msgid "Starting hour"
+msgstr "Heure de début"
+
+#. module: moka_stay_fields
+#: model:ir.model.fields,help:moka_stay_fields.field_account_invoice__moka_heure_debut_invoice
+#: model:ir.model.fields,help:moka_stay_fields.field_crm_lead__moka_heure_debut
+#: model:ir.model.fields,help:moka_stay_fields.field_sale_order__moka_heure_debut_devis
+#: model:ir.model.fields,help:moka_stay_fields.field_sale_order_template__moka_heure_debut_md
+msgid "The hour when the benefit will begin. If the hour is 00:00, the all journey will be selected, without hours."
+msgstr "Heure à laquelle la prestation commence. Indiquer 00:00 si la prestation se déroule sur une journée entière."
+
+#. module: moka_stay_fields
+#: model:ir.model.fields,help:moka_stay_fields.field_account_invoice__moka_heure_fin_invoice
+#: model:ir.model.fields,help:moka_stay_fields.field_crm_lead__moka_heure_fin
+#: model:ir.model.fields,help:moka_stay_fields.field_sale_order__moka_heure_fin_devis
+#: model:ir.model.fields,help:moka_stay_fields.field_sale_order_template__moka_heure_fin_md
+msgid "The hour when the benefit will end. If the hour is 00:00, the all journey will be selected, without hours."
+msgstr "Heure à laquelle la prestation se termine. Indiquer 00:00 si la prestation se déroule sur une journée entière."
+
+#. module: moka_stay_fields
+#: model:ir.model.fields,help:moka_stay_fields.field_account_invoice__moka_prix_pp_ht_invoice
+#: model:ir.model.fields,help:moka_stay_fields.field_account_invoice__moka_prix_pp_invoice
+#: model:ir.model.fields,help:moka_stay_fields.field_crm_lead__moka_prix_pp
+#: model:ir.model.fields,help:moka_stay_fields.field_sale_order__moka_prix_pp_devis
+#: model:ir.model.fields,help:moka_stay_fields.field_sale_order__moka_prix_pp_ht_devis
+#: model:ir.model.fields,help:moka_stay_fields.field_sale_order_template__moka_prix_pp_md
+msgid "The price per person calculated from the number of persons participating in the benefit, and the total price of the benefit. (not displayed in the CRM)"
+msgstr "Le prix par personne est calculé en fonction du nombre de personnes participant à la prestation et du prix total de la prestation."
+
+#. module: moka_stay_fields
+#: model:ir.model,name:moka_stay_fields.model_calendar_event_wizard
+msgid "calendar.event.wizard"
+msgstr ""

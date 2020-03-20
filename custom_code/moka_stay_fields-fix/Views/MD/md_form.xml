@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+
+  <record id="view_md_form_inherit" model="ir.ui.view">
+    <field name="name">view.md.form.inherit</field>
+    <field name="model">sale.order.template</field>
+    <field name="inherit_id" ref="sale_management.sale_order_template_view_form"/>
+    <field name="arch" type="xml">
+      <xpath expr="/form/sheet/group/group[1]" position="after">
+        <!-- Group invisible to place correctly the next groups -->
+        <group></group>
+
+        <!-- Groups with the new fields -->
+        <group>
+          <field name="moka_is_sejour_md"/>
+          <field name="moka_sejour_titre_md"
+                 attrs="{
+                 'invisible': [('moka_is_sejour_md', '=', False)]
+                 }"/>
+          <field name="moka_nombre_personnes_md"
+                  attrs="{
+                  'invisible': [('moka_is_sejour_md', '=', False)]
+                  }"/>
+        </group>
+        <group attrs="{
+                    'invisible': [('moka_is_sejour_md', '=', False)]
+                    }">
+          <field name="moka_sejour_debut_md"/>
+          <field name="moka_heure_debut_md" widget="float_time"/>
+          <hr size="5"></hr>
+          <field name="moka_sejour_fin_md"/>
+          <field name="moka_heure_fin_md" widget="float_time"/>
+        </group>
+      </xpath>
+    </field>
+  </record>
+
+</odoo>
