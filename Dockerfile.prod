@@ -107,11 +107,10 @@ RUN git clone -b 12.0 https://github.com/OCA/project && \
       git checkout 1b883adcf56c4ecb8780ec9adcfe1dcb6d71349f && \
       git reset --hard
 
-RUN git clone -b 12.0 https://github.com/sum1201/odoo_addons sum1201_odoo_addons && \
-      cd /opt/odoo/extra-addons/sum1201_odoo_addons/ && \
-      git checkout 2aa8df01cefcfa93715d8e6932c9216a6da746ba && \
+RUN git clone -b 12.0 https://github.com/druidoo/druidoo-addons && \
+      cd /opt/odoo/extra-addons/druidoo-addons/ && \
+      git checkout eb62d67107721b9bf41b4019581c1790c91af680 && \
       git reset --hard
-
 
 WORKDIR /opt/odoo
 
