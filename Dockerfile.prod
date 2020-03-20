@@ -107,6 +107,22 @@ RUN git clone -b 12.0 https://github.com/OCA/project && \
       git checkout 1b883adcf56c4ecb8780ec9adcfe1dcb6d71349f && \
       git reset --hard
 
+RUN git clone -b 12.0 https://github.com/OCA/sale-reporting && \
+      cd /opt/odoo/extra-addons/sale-reporting/ && \
+      git checkout cf538541d64e0b8d0d928d2261239175a353afd7 && \
+      git reset --hard
+
+RUN git clone -b 12.0 https://github.com/OCA/sale-workflow && \
+      cd /opt/odoo/extra-addons/sale-workflow/ && \
+      git checkout ff56cf8467f34e502c60cdb96e1bd8fd4cd0bc01 && \
+      git reset --hard
+
+RUN git clone -b 12.0 https://github.com/OCA/margin-analysis && \
+      cd /opt/odoo/extra-addons/margin-analysis/ && \
+      git checkout 4a50437ecfa591a72e12255448d38d0fb1037a42 && \
+      git reset --hard
+
+
 RUN git clone -b 12.0 https://github.com/druidoo/druidoo-addons && \
       cd /opt/odoo/extra-addons/druidoo-addons/ && \
       git checkout eb62d67107721b9bf41b4019581c1790c91af680 && \
