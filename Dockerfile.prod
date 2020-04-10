@@ -122,6 +122,10 @@ RUN git clone -b 12.0 https://github.com/OCA/margin-analysis && \
       git checkout 4a50437ecfa591a72e12255448d38d0fb1037a42 && \
       git reset --hard
 
+RUN git clone -b 12.0 https://github.com/OCA/reporting-engine && \
+      cd /opt/odoo/extra-addons/reporting-engine/ && \
+      git checkout 2d034b8369f42575295937ab10cdf8c8495006c9 && \
+      git reset --hard
 
 RUN git clone -b 12.0 https://github.com/druidoo/druidoo-addons && \
       cd /opt/odoo/extra-addons/druidoo-addons/ && \
