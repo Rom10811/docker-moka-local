@@ -1,57 +1,45 @@
 FROM registry.yaltik.net/odoo:yaltikbase12
 MAINTAINER Yaltik - Fabien Bourgeois <fabien@yaltik.com>
 
+# Configuration
+RUN  git config --global user.email "bot@mokatourisme.fr" && \
+      git config --global user.name "MOKA Bot"
+
 # External code
 WORKDIR /opt/odoo/extra-addons
 
+# OCA
 RUN git clone -b 12.0 https://github.com/OCA/community-data-files && \
-      cd /opt/odoo/extra-addons/community-data-files && \
-      git checkout 922df7b3945546934a4d3e3c65666156e6222b36 && \
-      git reset --hard
+      git clone -b 12.0 https://github.com/OCA/l10n-france && \
+      git clone -b 12.0 https://github.com/OCA/queue && \
+      git clone -b 12.0 https://github.com/OCA/partner-contact && \
+      git clone -b 12.0 https://github.com/OCA/social && \
+      git clone -b 12.0 https://github.com/OCA/server-brand && \
+      git clone -b 12.0 https://github.com/OCA/web && \
+      git clone -b 12.0 https://github.com/OCA/account-financial-tools && \
+      git clone -b 12.0 https://github.com/OCA/account-financial-reporting && \
+      git clone -b 12.0 https://github.com/OCA/website && \
+      git clone -b 12.0 https://github.com/OCA/contract && \
+      git clone -b 12.0 https://github.com/OCA/bank-statement-import && \
+      git clone -b 12.0 https://github.com/OCA/mis-builder && \
+      git clone -b 12.0 https://github.com/OCA/pos && \
+      git clone -b 12.0 https://github.com/OCA/project && \
+      git clone -b 12.0 https://github.com/OCA/sale-reporting && \
+      git clone -b 12.0 https://github.com/OCA/sale-workflow && \
+      git clone -b 12.0 https://github.com/OCA/margin-analysis && \
+      git clone -b 12.0 https://github.com/OCA/reporting-engine && \
+      git clone -b 12.0 https://github.com/OCA/product-variant
 
-RUN git clone -b 12.0 https://github.com/OCA/l10n-france && \
-      cd /opt/odoo/extra-addons/l10n-france && \
-      git checkout 3643f4fcbd2549d83503a200eb1100393a72ce7e && \
-      git reset --hard
+# Specific MR
+RUN cd /opt/odoo/extra-addons/sale-reporting/ && \
+      git fetch origin pull/89/head:mokatmp && \
+      git cherry-pick ed61c8dc55f95175bdfa7760688d1305b976fd1d
 
-RUN git clone -b 12.0 https://github.com/OCA/queue && \
-      cd /opt/odoo/extra-addons/queue && \
-      git checkout 674528dbc64df1afc651f321ef40900251b61fea && \
-      git reset --hard
+RUN cd /opt/odoo/extra-addons/product-variant/ && \
+      git fetch origin pull/171/head:mokatmp && \
+      git cherry-pick 37d0526cd26a26bfe88b9ed1f39d2a14ced926fa
 
-RUN git clone -b 12.0 https://github.com/OCA/partner-contact && \
-      cd /opt/odoo/extra-addons/partner-contact && \
-      git checkout 1688a48ef2caf520e0b949f79f33887c314ad06f && \
-      git reset --hard
-
-
-RUN git clone -b 12.0 https://github.com/OCA/social && \
-      cd /opt/odoo/extra-addons/social && \
-      git checkout e7c46f9eb687e988f0ac25d69c29ae7537e9c433 && \
-      git reset --hard
-
-RUN git clone -b 12.0 https://github.com/OCA/server-brand && \
-      cd /opt/odoo/extra-addons/server-brand && \
-      git checkout e2d5fa1b92ed558e6428bd6f175365b511f1b0ad && \
-      git reset --hard
-
-RUN git clone -b 12.0 https://github.com/OCA/web && \
-      cd /opt/odoo/extra-addons/web && \
-      git checkout e4e84f1eec0b9ef585aa5bf2cd5d4b72fa2f3072 && \
-      git reset --hard
-
-# RM -RF because account_check_deposit is already used from local MOKA repo
-RUN git clone -b 12.0 https://github.com/OCA/account-financial-tools && \
-      cd /opt/odoo/extra-addons/account-financial-tools && \
-      git checkout 50d321ee924bc7f53ddb0b98b1a676942611414d && \
-      git reset --hard && \
-      rm -rf account_check_deposit
-
-RUN git clone -b 12.0 https://github.com/OCA/account-financial-reporting && \
-      cd /opt/odoo/extra-addons/account-financial-reporting && \
-      git checkout 35d730f62b0d6e5fa0fdaad390ccc2213a6f0b14 && \
-      git reset --hard
-
+# MUK
 RUN git clone -b 12.0 https://github.com/muk-it/muk_base && \
       cd /opt/odoo/extra-addons/muk_base && \
       git checkout b1bd31e3e7293cf9794346c00f5d1f05d5b5464b && \
@@ -72,61 +60,13 @@ RUN git clone -b 12.0 https://github.com/muk-it/muk_website && \
       git checkout e44ab81fc9b900ffc32b4175bfe9b5b1862d3160 && \
       git reset --hard
 
+# SerpentCS
 RUN git clone -b 12.0 https://github.com/JayVora-SerpentCS/SerpentCS_Contributions && \
       cd /opt/odoo/extra-addons/SerpentCS_Contributions && \
       git checkout 47e32f96a3154357f94058f2d7a6b1a1c42fcb4c && \
       git reset --hard
 
-RUN git clone -b 12.0 https://github.com/OCA/website && \
-      cd /opt/odoo/extra-addons/website/ && \
-      git checkout 9bc24fdf0f9230e24f7425b8b0a346aae8840ce0 && \
-      git reset --hard
-
-RUN git clone -b 12.0 https://github.com/OCA/contract && \
-      cd /opt/odoo/extra-addons/contract/ && \
-      git checkout c677201ad4e0ec1d22a8f08faa3f5c2bc8f8775e && \
-      git reset --hard
-
-RUN git clone -b 12.0 https://github.com/OCA/bank-statement-import && \
-      cd /opt/odoo/extra-addons/bank-statement-import/ && \
-      git checkout c6753bd63d3c9f5505d7152f2951a9af62d6d2d0 && \
-      git reset --hard
-
-RUN git clone -b 12.0 https://github.com/OCA/mis-builder && \
-      cd /opt/odoo/extra-addons/mis-builder/ && \
-      git checkout 456f18da45165aa3f27e8e6ba60e79864858fb2c && \
-      git reset --hard
-
-RUN git clone -b 12.0 https://github.com/OCA/pos && \
-      cd /opt/odoo/extra-addons/pos/ && \
-      git checkout 0eec41bba229ca5bb2b7aee6104979cc09ac9c29 && \
-      git reset --hard
-
-RUN git clone -b 12.0 https://github.com/OCA/project && \
-      cd /opt/odoo/extra-addons/project/ && \
-      git checkout 1b883adcf56c4ecb8780ec9adcfe1dcb6d71349f && \
-      git reset --hard
-
-RUN git clone -b 12.0 https://github.com/OCA/sale-reporting && \
-      cd /opt/odoo/extra-addons/sale-reporting/ && \
-      git checkout cf538541d64e0b8d0d928d2261239175a353afd7 && \
-      git reset --hard
-
-RUN git clone -b 12.0 https://github.com/OCA/sale-workflow && \
-      cd /opt/odoo/extra-addons/sale-workflow/ && \
-      git checkout ff56cf8467f34e502c60cdb96e1bd8fd4cd0bc01 && \
-      git reset --hard
-
-RUN git clone -b 12.0 https://github.com/OCA/margin-analysis && \
-      cd /opt/odoo/extra-addons/margin-analysis/ && \
-      git checkout 4a50437ecfa591a72e12255448d38d0fb1037a42 && \
-      git reset --hard
-
-RUN git clone -b 12.0 https://github.com/OCA/reporting-engine && \
-      cd /opt/odoo/extra-addons/reporting-engine/ && \
-      git checkout 2d034b8369f42575295937ab10cdf8c8495006c9 && \
-      git reset --hard
-
+# Druidoo
 RUN git clone -b 12.0 https://github.com/druidoo/druidoo-addons && \
       cd /opt/odoo/extra-addons/druidoo-addons/ && \
       git checkout eb62d67107721b9bf41b4019581c1790c91af680 && \

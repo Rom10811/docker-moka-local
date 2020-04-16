@@ -1,9 +1,14 @@
 FROM registry.yaltik.net/odoo:yaltikbase12
 MAINTAINER Yaltik - Fabien Bourgeois <fabien@yaltik.com>
 
+# Configuration
+RUN  git config --global user.email "bot@mokatourisme.fr" && \
+      git config --global user.name "MOKA Bot"
+
 # External code
 WORKDIR /opt/odoo/extra-addons
 
+# OCA
 RUN git clone -b 12.0 https://github.com/OCA/community-data-files && \
       git clone -b 12.0 https://github.com/OCA/l10n-france && \
       git clone -b 12.0 https://github.com/OCA/queue && \
@@ -22,15 +27,26 @@ RUN git clone -b 12.0 https://github.com/OCA/community-data-files && \
       git clone -b 12.0 https://github.com/OCA/sale-reporting && \
       git clone -b 12.0 https://github.com/OCA/sale-workflow && \
       git clone -b 12.0 https://github.com/OCA/margin-analysis && \
-      git clone -b 12.0 https://github.com/OCA/reporting-engine
+      git clone -b 12.0 https://github.com/OCA/reporting-engine && \
+      git clone -b 12.0 https://github.com/OCA/product-variant
 
+# Specific MR
+RUN cd /opt/odoo/extra-addons/sale-reporting/ && \
+      git fetch origin pull/89/head:mokatmp && \
+      git cherry-pick ed61c8dc55f95175bdfa7760688d1305b976fd1d
+
+RUN cd /opt/odoo/extra-addons/product-variant/ && \
+      git fetch origin pull/171/head:mokatmp && \
+      git cherry-pick 37d0526cd26a26bfe88b9ed1f39d2a14ced926fa
+
+# MUK
 RUN git clone -b 12.0 https://github.com/muk-it/muk_base && \
       git clone -b 12.0 https://github.com/muk-it/muk_misc && \
       git clone -b 12.0 https://github.com/muk-it/muk_web && \
       git clone -b 12.0 https://github.com/muk-it/muk_website
 
+# Others
 RUN git clone -b 12.0 https://github.com/JayVora-SerpentCS/SerpentCS_Contributions
-
 RUN git clone -b 12.0 https://github.com/druidoo/druidoo-addons
 
 WORKDIR /opt/odoo
