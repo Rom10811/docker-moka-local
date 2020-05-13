@@ -1,6 +1,11 @@
 FROM registry.yaltik.net/odoo:yaltikbase12
 MAINTAINER Yaltik - Fabien Bourgeois <fabien@yaltik.com>
 
+# Locales
+USER root
+RUN apt update && apt install -y locales locales-all
+USER odoo
+
 # Configuration
 RUN  git config --global user.email "bot@mokatourisme.fr" && \
       git config --global user.name "MOKA Bot"
