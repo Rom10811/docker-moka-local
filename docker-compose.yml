@@ -1,0 +1,54 @@
+version: '2.4'
+
+services:
+
+  odoo12yaltik:
+    image: registry.yaltik.net/odoo:yaltikbase12
+    build:
+      context: .
+      dockerfile: Dockerfile.yaltik.12
+    command: /bin/true
+
+  pgmoka:
+    build:
+      context: .
+      dockerfile: Dockerfile.postgres.10
+    environment:
+      POSTGRES_USER: moka
+      POSTGRES_PASSWORD: somethingToChange
+      PGDATA: /opt/odoo/pgdata
+    volumes:
+      - pgmokadev:/opt/odoo/pgdata
+
+  mokatest:
+    init: true
+    build:
+      context: .
+      dockerfile: Dockerfile.test
+    environment:
+      TZ: Europe/Paris
+      ADMIN_PASSWORD: admin
+      WORKERS: 2
+      LIMIT_TIME_CPU: 240
+      LIMIT_TIME_REAL: 360
+      LIMIT_MEMORY_SOFT: 5368709120
+      LIMIT_MEMORY_HARD: 10737418240
+      LIST_DB: "True"
+      DB_HOST: pgmoka
+      DB_MAXCONN: 20
+      POSTGRES_USER: moka
+      POSTGRES_PASSWORD: somethingToChange
+    depends_on:
+      - pgmoka
+    ports:
+      - 127.0.0.1:8840:8069
+    volumes:
+      - mokaodoodev:/opt/odoo/data
+      - ./custom_code:/opt/odoo/custom-addons
+    stdin_open: true
+    tty: true
+    command: /bin/bash --norc
+
+volumes:
+  pgmokadev:
+  mokaodoodev:
