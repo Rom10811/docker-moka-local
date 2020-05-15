@@ -44,7 +44,7 @@ services:
       - 127.0.0.1:8840:8069
     volumes:
       - mokaodoodev:/opt/odoo/data
-      - ./custom_code:/opt/odoo/custom-addons
+      - ./custom_code:/opt/odoo/custom-addons/moka
     stdin_open: true
     tty: true
     command: /bin/bash --norc
