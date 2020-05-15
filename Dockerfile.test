@@ -78,4 +78,4 @@ RUN git clone --depth 1 -b 12.0-dev https://$GITLAB_USER:$GITLAB_PASS@gitlab.com
 
 WORKDIR /opt/odoo
 
-COPY launch12.sh /opt/odoo/launch.sh
+COPY launch.sh /opt/odoo/launch.sh
