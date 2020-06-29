@@ -35,10 +35,8 @@ RUN git clone -b 12.0 https://github.com/OCA/community-data-files && \
       git clone -b 12.0 https://github.com/OCA/reporting-engine && \
       git clone -b 12.0 https://github.com/OCA/product-variant
 
-# Specific MR
-RUN cd /opt/odoo/extra-addons/sale-reporting/ && \
-      git fetch origin pull/89/head:mokatmp && \
-      git cherry-pick ed61c8dc55f95175bdfa7760688d1305b976fd1d
+# Module + PR 89 replaced by by moka_custom
+RUN rm -r /opt/odoo/extra-addons/sale-reporting/sale_layout_category_hide_detail
 
 RUN cd /opt/odoo/extra-addons/product-variant/ && \
       git fetch origin pull/171/head:mokatmp && \
@@ -94,6 +92,8 @@ RUN mkdir -p /opt/odoo/extra-addons/moka
 WORKDIR /opt/odoo/extra-addons/moka
 RUN git clone --depth 1 -b 12.0 https://$GITLAB_USER:$GITLAB_PASS@gitlab.com/moka_fr/moka-billetterie.git moka_billetterie
 RUN git clone --depth 1 -b 12.0 https://$GITLAB_USER:$GITLAB_PASS@gitlab.com/moka_fr/moka-depot-vente.git moka_depot_vente
+WORKDIR /opt/odoo/extra-addons
+RUN git clone --depth 1 -b 12.0 https://$GITLAB_USER:$GITLAB_PASS@gitlab.com/moka_fr/moka.git moka_custom
 
 # Custom configuration (MUK)
 
