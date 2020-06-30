@@ -76,7 +76,7 @@ RUN git clone -b 12.0 https://github.com/JayVora-SerpentCS/SerpentCS_Contributio
 # Druidoo
 RUN git clone -b 12.0 https://github.com/druidoo/druidoo-addons && \
       cd /opt/odoo/extra-addons/druidoo-addons/ && \
-      git checkout eb62d67107721b9bf41b4019581c1790c91af680 && \
+      git checkout 908d997d2a89a674f4ebc42eb3c97728d36f4e91 && \
       git reset --hard
 
 WORKDIR /opt/odoo
