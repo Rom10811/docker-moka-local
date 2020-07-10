@@ -27,6 +27,8 @@ services:
       dockerfile: Dockerfile.test
     environment:
       TZ: Europe/Paris
+      LANG: fr_FR.UTF-8
+      LANGUAGE: fr
       ADMIN_PASSWORD: admin
       WORKERS: 2
       LIMIT_TIME_CPU: 240
