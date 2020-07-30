@@ -20,6 +20,8 @@ class pos_order(models.Model):
 		Move = self.env['stock.move']
 		StockWarehouse = self.env['stock.warehouse']
 		for order in self:
+			if not order.lines.filtered(lambda l: l.product_id.type in ['product', 'consu']):
+				continue
 			address = order.partner_id.address_get(['delivery']) or {}
 			picking_type = order.picking_type_id
 			picking_id = False
@@ -56,7 +58,7 @@ class pos_order(models.Model):
 							 'name': item.name,
 							'product_uom': item.product_id.uom_id.id,
 							'picking_id': picking_id and picking_id.id or False,
-							'picking_type_id': picking_type.id, 
+							'picking_type_id': picking_type.id,
 							'product_id': item.product_id.id,
 							'product_uom_qty': abs(item.qty_uom) * line.qty,
 							'state': 'draft',
@@ -85,6 +87,6 @@ class pos_order(models.Model):
 				Move.action_assign()
 				Move.action_done()
 		return True
-		
+
 
 # vim:expandtab:smartindent:tabstop=4:softtabstop=4:shiftwidth=4:
