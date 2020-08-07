@@ -1,8 +1,0 @@
-
-Version 12.0.0.1
------------------
-  -> Index improved according new format
-
-Version 12.0.0.2 (26/12/19) :
-		- add settings option on pos as "Print only Bundle Product on Receipt", "Print bundle and bundle item both on receipt" and print according to that.
-
