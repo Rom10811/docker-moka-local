@@ -57,6 +57,7 @@ RUN git clone -b 12.0 https://github.com/muk-it/muk_base && \
 RUN git clone -b 12.0 https://github.com/JayVora-SerpentCS/SerpentCS_Contributions
 RUN git clone -b 12.0 https://github.com/druidoo/druidoo-addons
 RUN git clone -b 12.0 https://github.com/Openworx/backend_theme
+RUN git clone -b 12.0 https://github.com/gityopie/odoo-addons gityopie-odoo-addons
 
 WORKDIR /opt/odoo
 
@@ -73,7 +74,7 @@ WORKDIR /opt/odoo/extra-addons/moka
 RUN git clone --depth 1 -b 12.0-dev https://$GITLAB_USER:$GITLAB_PASS@gitlab.com/moka_fr/moka-billetterie.git moka_billetterie
 RUN git clone --depth 1 -b 12.0-dev https://$GITLAB_USER:$GITLAB_PASS@gitlab.com/moka_fr/moka-depot-vente.git moka_depot_vente
 WORKDIR /opt/odoo/extra-addons
-RUN git clone --depth 1 -b 12.0_dev https://$GITLAB_USER:$GITLAB_PASS@gitlab.com/moka_fr/moka.git moka_custom
+RUN git clone --depth 1 -b 12.0_dev https://$GITLAB_USER:$GITLAB_PASS@gitlab.com/moka_fr/moka.git moka_extra && mv moka_extra/custom moka_custom && mv moka_extra/thirdparty moka_thirdparty && rm -rf moka_extra
 
 # Custom configuration (MUK)
 
