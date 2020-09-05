@@ -46,7 +46,7 @@ RUN cd /opt/odoo/extra-addons/product-variant/ && \
 
 RUN cd /opt/odoo/extra-addons/account-financial-tools/ && \
       git fetch origin pull/872/head:mokatmp && \
-      git cherry-pick 14a2c1b8c1d5b696a7be490f8df3219037d5fec4
+      git cherry-pick 0923cbd003108b1fa3124da7df83d1815cb95b28
 
 # MUK
 RUN git clone -b 12.0 https://github.com/muk-it/muk_base && \
