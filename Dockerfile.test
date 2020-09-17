@@ -63,7 +63,7 @@ RUN git clone -b 12.0 https://github.com/gityopie/odoo-addons gityopie-odoo-addo
 WORKDIR /opt/odoo
 
 # Addons dependencies
-RUN .local/bin/pip3 install --user openupgradelib
+RUN .local/bin/pip3 install --user git+git://github.com/OCA/openupgradelib.git
 
 # Custom code
 ENV GITLAB_USER mokabot%40mokatourisme.fr
