@@ -35,7 +35,8 @@ RUN git clone -b 12.0 https://github.com/OCA/community-data-files && \
       git clone -b 12.0 https://github.com/OCA/margin-analysis && \
       git clone -b 12.0 https://github.com/OCA/reporting-engine && \
       git clone -b 12.0 https://github.com/OCA/product-variant && \
-      git clone -b 12.0 https://github.com/OCA/e-commerce
+      git clone -b 12.0 https://github.com/OCA/e-commerce && \
+      git clone -b 12.0 https://github.com/OCA/product-pack
 
 # Module + PR 89 replaced by by moka_custom
 RUN rm -r /opt/odoo/extra-addons/sale-reporting/sale_layout_category_hide_detail
