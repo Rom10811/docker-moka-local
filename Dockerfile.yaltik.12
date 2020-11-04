@@ -40,7 +40,7 @@ RUN apt-get purge -y --auto-remove \
 # Create odoo user
 RUN useradd odoo -md /opt/odoo
 
-# Install OCB 11.0 latest
+# Install OCB 12.0 latest
 ENV ODOO_BRANCH 12.0
 WORKDIR /opt/odoo
 # Default user : odoo
