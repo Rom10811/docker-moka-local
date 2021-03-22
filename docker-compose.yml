@@ -2,11 +2,11 @@ version: '2.4'
 
 services:
 
-  odoo12yaltik:
-    image: registry.yaltik.net/odoo:yaltikbase12
+  odoo12:
+    image: registry.yaltik.net/odoo:moka12
     build:
       context: .
-      dockerfile: Dockerfile.yaltik.12
+      dockerfile: Dockerfile.odoo12
     command: /bin/true
 
   pgmoka:
@@ -22,34 +22,43 @@ services:
 
   mokatest:
     init: true
+    stdin_open: true
+    tty: true
     build:
       context: .
       dockerfile: Dockerfile.test
+      args:
+        GITHUB_USER: bot-moka
+        GITHUB_TOKEN: e66a8f4995babd16ca7ad139da2182efb0bdcf59
     environment:
       TZ: Europe/Paris
-      LANG: fr_FR.UTF-8
-      LANGUAGE: fr
       ADMIN_PASSWORD: admin
+      WAIT_PG: 'true'
+      LIST_DB: 'true'
+      UNACCENT: 'true'
+      LOG_LEVEL: 'info'
+      SERVER_WIDE_MODULES: web,muk_saas_branding
       WORKERS: 2
       LIMIT_TIME_CPU: 240
       LIMIT_TIME_REAL: 360
       LIMIT_MEMORY_SOFT: 5368709120
       LIMIT_MEMORY_HARD: 10737418240
-      LIST_DB: "True"
-      DB_HOST: pgmoka
-      DB_MAXCONN: 20
-      POSTGRES_USER: moka
-      POSTGRES_PASSWORD: somethingToChange
+      PGHOST: pgmoka
+      PGUSER: moka
+      PGPASSWORD: somethingToChange
+      # Custom config
+      # You can add custom odoo.conf lines here
+      CUSTOM_CONFIG: |-
+          [options]
     depends_on:
       - pgmoka
     ports:
       - 127.0.0.1:8840:8069
     volumes:
-      - mokaodoodev:/opt/odoo/data
-      - ./custom_code:/opt/odoo/custom-addons/moka
-    stdin_open: true
-    tty: true
-    command: /bin/bash --norc
+      - mokaodoodev:/home/odoo/data
+      # These modules are loaded with higher priority than the ones in the image
+      # If a module has the same name, this one will be used.
+      - ./custom_code:/home/odoo/custom/repositories:rw,z
 
 volumes:
   pgmokadev:
