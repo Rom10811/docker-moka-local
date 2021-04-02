@@ -1,0 +1,242 @@
+
+# We use 000- to make sure these repositories are loaded before any other
+# in case we have custom duplicates of external addons
+
+000-moka-custom:
+  remotes:
+    origin: https://$GITHUB_USER:$GITHUB_TOKEN@github.com/Moka-Tourisme/moka-custom
+  merges:
+    - origin $ODOO_VERSION
+  target: origin $ODOO_VERSION
+
+000-moka-thirdparty:
+  remotes:
+    origin: https://$GITHUB_USER:$GITHUB_TOKEN@github.com/Moka-Tourisme/moka-thirdparty
+  merges:
+    - origin $ODOO_VERSION
+  target: origin $ODOO_VERSION
+
+# Moka Repositories
+
+moka-welcome:
+  remotes:
+    origin: https://$GITHUB_USER:$GITHUB_TOKEN@github.com/Moka-Tourisme/moka-welcome
+  merges:
+    - origin $ODOO_VERSION
+  target: origin $ODOO_VERSION
+
+moka-billetterie:
+  remotes:
+    origin: https://$GITHUB_USER:$GITHUB_TOKEN@github.com/Moka-Tourisme/moka-billetterie
+  merges:
+    - origin $ODOO_VERSION
+  target: origin $ODOO_VERSION
+
+addons/moka_depot_vente:
+  remotes:
+    origin: https://$GITHUB_USER:$GITHUB_TOKEN@github.com/Moka-Tourisme/moka-depot-vente
+  merges:
+    - origin $ODOO_VERSION
+  target: origin $ODOO_VERSION
+
+# Muk Repositories
+
+muk_base:
+  remotes:
+    origin: https://github.com/muk-it/muk_base
+  fetch_all:
+    - origin
+  target: origin $ODOO_VERSION
+  merges:
+    - origin b1bd31e3e7293cf9794346c00f5d1f05d5b5464b
+
+muk_misc:
+  remotes:
+    origin: https://github.com/muk-it/muk_misc
+  fetch_all:
+    - origin
+  target: origin $ODOO_VERSION
+  merges:
+    - origin 206a02a5f05eea110db996c0dce8a9cb1074b277
+
+muk_web:
+  remotes:
+    origin: https://github.com/muk-it/muk_web
+  fetch_all:
+    - origin
+  target: origin $ODOO_VERSION
+  merges:
+    - origin fb14a33aa08d00d13e3a13e1f975ed3f9b4c14ef
+
+muk_website:
+  remotes:
+    origin: https://github.com/muk-it/muk_website
+  fetch_all:
+    - origin
+  target: origin $ODOO_VERSION
+  merges:
+    - origin e44ab81fc9b900ffc32b4175bfe9b5b1862d3160
+
+# Others 
+
+druidoo-addons:
+  remotes:
+    origin: https://github.com/druidoo/druidoo-addons
+  fetch_all:
+    - origin
+  target: origin $ODOO_VERSION
+  merges:
+    - origin 908d997d2a89a674f4ebc42eb3c97728d36f4e91
+
+SerpentCS_Contributions:
+  remotes:
+    origin: https://github.com/JayVora-SerpentCS/SerpentCS_Contributions
+  fetch_all:
+    - origin
+  target: origin $ODOO_VERSION
+  merges:
+    - origin 47e32f96a3154357f94058f2d7a6b1a1c42fcb4c
+
+
+# OCA
+
+l10n-france: &defaults
+  defaults:
+    depth: 1
+  remotes:
+    origin: https://github.com/OCA/l10n-france
+  merges:
+    - origin $ODOO_VERSION
+  target: origin $ODOO_VERSION
+
+queue:
+  << : *defaults
+  remotes:
+    origin: https://github.com/OCA/queue
+
+community-data-files:
+  << : *defaults
+  remotes:
+    origin: https://github.com/OCA/community-data-files
+
+account-closing:
+  << : *defaults
+  remotes:
+    origin: https://github.com/OCA/account-closing
+
+partner-contact:
+  << : *defaults
+  remotes:
+    origin: https://github.com/OCA/partner-contact
+
+social:
+  << : *defaults
+  remotes:
+    origin: https://github.com/OCA/social
+
+server-brand:
+  << : *defaults
+  remotes:
+    origin: https://github.com/OCA/server-brand
+
+server-ux:
+  << : *defaults
+  remotes:
+    origin: https://github.com/OCA/server-ux
+
+web:
+  << : *defaults
+  remotes:
+    origin: https://github.com/OCA/web
+
+account-financial-reporting:
+  << : *defaults
+  remotes:
+    origin: https://github.com/OCA/account-financial-reporting
+
+website:
+  << : *defaults
+  remotes:
+    origin: https://github.com/OCA/website
+
+contract:
+  << : *defaults
+  remotes:
+    origin: https://github.com/OCA/contract
+
+bank-statement-import:
+  << : *defaults
+  remotes:
+    origin: https://github.com/OCA/bank-statement-import
+  
+mis-builder:
+  << : *defaults
+  remotes:
+    origin: https://github.com/OCA/mis-builder
+
+pos:
+  << : *defaults
+  remotes:
+    origin: https://github.com/OCA/pos
+
+project:
+  << : *defaults
+  remotes:
+    origin: https://github.com/OCA/project
+
+sale-reporting:
+  << : *defaults
+  remotes:
+    origin: https://github.com/OCA/sale-reporting
+
+sale-workflow:
+  << : *defaults
+  remotes:
+    origin: https://github.com/OCA/sale-workflow
+
+margin-analysis:
+  << : *defaults
+  remotes:
+    origin: https://github.com/OCA/margin-analysis
+
+reporting-engine:
+  << : *defaults
+  remotes:
+    origin: https://github.com/OCA/reporting-engine
+
+e-commerce:
+  << : *defaults
+  remotes:
+    origin: https://github.com/OCA/e-commerce
+
+product-pack:
+  << : *defaults
+  remotes:
+    origin: https://github.com/OCA/product-pack
+
+dms:
+  << : *defaults
+  remotes:
+    origin: https://github.com/OCA/dms
+
+# OCA Repositories with custom PRs
+
+account-financial-tools:
+  remotes:
+    origin: https://github.com/OCA/account-financial-tools
+  target: origin $ODOO_VERSION
+  fetch_all:
+    - origin
+  merges:
+    - origin $ODOO_VERSION
+    - origin refs/pull/872/head
+
+product-variant:
+  remotes:
+    origin: https://github.com/OCA/product-variant
+  target: origin $ODOO_VERSION
+  fetch_all:
+    - origin
+  merges:
+    - origin $ODOO_VERSION
+    - origin refs/pull/171/head
