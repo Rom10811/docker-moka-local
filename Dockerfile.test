@@ -1,4 +1,5 @@
 FROM registry.yaltik.net/odoo:moka12
+LABEL maintainer="ivan.todorovich@gmail.com"
 ARG GITHUB_USER
 ARG GITHUB_TOKEN
 COPY repos.test.yml $RESOURCES/repos.yml

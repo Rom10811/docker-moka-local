@@ -1,4 +1,5 @@
-FROM python:3.6.9-slim-buster AS base
+FROM python:3.8.5-slim-buster AS base
+LABEL maintainer="ivan.todorovich@gmail.com"
 
 EXPOSE 8069 8072
 
