@@ -32,7 +32,7 @@ moka-billetterie:
     - origin $ODOO_VERSION-dev
   target: origin $ODOO_VERSION
 
-addons/moka_depot_vente:
+moka_depot_vente:
   remotes:
     origin: https://$GITHUB_USER:$GITHUB_TOKEN@github.com/Moka-Tourisme/moka-depot-vente
   merges:
