@@ -100,19 +100,14 @@ SerpentCS_Contributions:
 
 # OCA
 
-l10n-france: &defaults
+queue: &defaults
   defaults:
     depth: 1
   remotes:
-    origin: https://github.com/OCA/l10n-france
+    origin: https://github.com/OCA/queue
+  target: origin $ODOO_VERSION
   merges:
     - origin $ODOO_VERSION
-  target: origin $ODOO_VERSION
-
-queue:
-  << : *defaults
-  remotes:
-    origin: https://github.com/OCA/queue
 
 community-data-files:
   << : *defaults
@@ -240,3 +235,11 @@ product-variant:
   merges:
     - origin $ODOO_VERSION
     - origin refs/pull/171/head
+
+l10n-france:
+  remotes:
+    origin: https://github.com/OCA/l10n-france
+  target: origin $ODOO_VERSION
+  merges:
+    - origin $ODOO_VERSION
+    - refs/pull/285/head  # payment_payfip
