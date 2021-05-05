@@ -242,4 +242,4 @@ l10n-france:
   target: origin $ODOO_VERSION
   merges:
     - origin $ODOO_VERSION
-    - refs/pull/285/head  # payment_payfip
+    - origin refs/pull/285/head  # payment_payfip
