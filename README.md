@@ -196,7 +196,7 @@ odoo -d moka-translation -i moka_depot_vente --load-language fr_FR --stop-after-
 click-odoo-makepot \
   -d moka-translation \
   --log-level info \
-  --addons-dir custom/repositories/ \
+  --addons-dir custom/repositories/moka-depot-vente \
   --msgmerge \
   --purge-old-translations \
   --no-fuzzy-matching
