@@ -249,3 +249,8 @@ account-invoicing:
   << : *defaults
   remotes:
     origin: https://github.com/OCA/account-invoicing
+
+server-env:
+  << : *defaults
+  remotes:
+    origin: https://github.com/OCA/server-env
