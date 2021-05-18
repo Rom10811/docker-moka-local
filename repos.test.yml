@@ -242,3 +242,10 @@ l10n-france:
   merges:
     - origin $ODOO_VERSION
     - origin refs/pull/285/head  # payment_payfip
+
+# Added by Grégory on 05/18
+
+account-invoicing:
+  << : *defaults
+  remotes:
+    origin: https://github.com/OCA/account-invoicing
