@@ -3,4 +3,6 @@ LABEL maintainer="ivan.todorovich@gmail.com"
 ARG GITHUB_USER
 ARG GITHUB_TOKEN
 COPY repos.prod.yml $RESOURCES/repos.yml
+COPY requirements.txt $RESOURCES/requirements.txt
 RUN autoaggregate --install -c $RESOURCES/repos.yml -o $SOURCES/repositories
+RUN pip install --user --no-cache-dir -r $RESOURCES/requirements.txt
