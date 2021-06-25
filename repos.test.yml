@@ -243,8 +243,6 @@ l10n-france:
     - origin $ODOO_VERSION
     - origin refs/pull/285/head  # payment_payfip
 
-# Added by Grégory on 05/18
-
 account-invoicing:
   << : *defaults
   remotes:
@@ -254,3 +252,8 @@ server-env:
   << : *defaults
   remotes:
     origin: https://github.com/OCA/server-env
+
+data-protection:
+  << : *defaults
+  remotes:
+    origin: https://github.com/OCA/data-protection
