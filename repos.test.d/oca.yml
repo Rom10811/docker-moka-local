@@ -1,0 +1,131 @@
+
+queue: &defaults
+  defaults:
+    depth: 1
+  remotes:
+    origin: https://github.com/OCA/queue
+  target: origin $ODOO_VERSION
+  merges:
+    - origin $ODOO_VERSION
+
+community-data-files:
+  << : *defaults
+  remotes:
+    origin: https://github.com/OCA/community-data-files
+
+account-closing:
+  << : *defaults
+  remotes:
+    origin: https://github.com/OCA/account-closing
+
+partner-contact:
+  << : *defaults
+  remotes:
+    origin: https://github.com/OCA/partner-contact
+
+social:
+  << : *defaults
+  remotes:
+    origin: https://github.com/OCA/social
+
+server-brand:
+  << : *defaults
+  remotes:
+    origin: https://github.com/OCA/server-brand
+
+server-ux:
+  << : *defaults
+  remotes:
+    origin: https://github.com/OCA/server-ux
+
+web:
+  << : *defaults
+  remotes:
+    origin: https://github.com/OCA/web
+
+account-financial-reporting:
+  << : *defaults
+  remotes:
+    origin: https://github.com/OCA/account-financial-reporting
+
+website:
+  << : *defaults
+  remotes:
+    origin: https://github.com/OCA/website
+
+contract:
+  << : *defaults
+  remotes:
+    origin: https://github.com/OCA/contract
+
+bank-statement-import:
+  << : *defaults
+  remotes:
+    origin: https://github.com/OCA/bank-statement-import
+  
+mis-builder:
+  << : *defaults
+  remotes:
+    origin: https://github.com/OCA/mis-builder
+
+pos:
+  << : *defaults
+  remotes:
+    origin: https://github.com/OCA/pos
+
+project:
+  << : *defaults
+  remotes:
+    origin: https://github.com/OCA/project
+
+sale-reporting:
+  << : *defaults
+  remotes:
+    origin: https://github.com/OCA/sale-reporting
+
+sale-workflow:
+  << : *defaults
+  remotes:
+    origin: https://github.com/OCA/sale-workflow
+
+margin-analysis:
+  << : *defaults
+  remotes:
+    origin: https://github.com/OCA/margin-analysis
+
+reporting-engine:
+  << : *defaults
+  remotes:
+    origin: https://github.com/OCA/reporting-engine
+
+e-commerce:
+  << : *defaults
+  remotes:
+    origin: https://github.com/OCA/e-commerce
+
+product-pack:
+  << : *defaults
+  remotes:
+    origin: https://github.com/OCA/product-pack
+
+dms:
+  << : *defaults
+  remotes:
+    origin: https://github.com/OCA/dms
+
+account-financial-tools:
+  << : *defaults
+  remotes:
+    origin: https://github.com/OCA/account-financial-tools
+  target: origin $ODOO_VERSION
+
+product-variant:
+  << : *defaults
+  remotes:
+    origin: https://github.com/OCA/product-variant
+  target: origin $ODOO_VERSION
+
+l10n-france:
+  << : *defaults
+  remotes:
+    origin: https://github.com/OCA/l10n-france

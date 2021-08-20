@@ -13,7 +13,7 @@ RUN $RESOURCES/entrypoint.d/100-pip-install-odoo
 # Additional configs
 COPY conf.d/* $RESOURCES/conf.d/
 # Install modules
-COPY repos.test.d $RESOURCES/repos.d
+COPY repos.d $RESOURCES/repos.d
 COPY requirements.txt $RESOURCES/requirements.txt
 RUN autoaggregate --directory $RESOURCES/repos.d --install --user --output $SOURCES/repositories
 RUN pip install --user --no-cache-dir -r $RESOURCES/requirements.txt

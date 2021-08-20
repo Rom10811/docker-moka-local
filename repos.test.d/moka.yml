@@ -1,0 +1,40 @@
+# We use 000- to make sure these repositories are loaded before any other
+# in case we have custom duplicates of external addons
+
+000-moka-custom:
+  remotes:
+    origin: https://$GITHUB_TOKEN@github.com/Moka-Tourisme/moka-custom
+  merges:
+    # - origin $ODOO_VERSION-dev
+    - origin $ODOO_VERSION
+  target: origin $ODOO_VERSION
+
+# 000-moka-thirdparty:
+#   remotes:
+#     origin: https://$GITHUB_TOKEN@github.com/Moka-Tourisme/moka-thirdparty
+#   merges:
+#     - origin $ODOO_VERSION
+#   target: origin $ODOO_VERSION
+
+# Moka Repositories
+
+# moka-welcome:
+#   remotes:
+#     origin: https://$GITHUB_TOKEN@github.com/Moka-Tourisme/moka-welcome
+#   merges:
+#     - origin $ODOO_VERSION
+#   target: origin $ODOO_VERSION
+
+# moka-billetterie:
+#   remotes:
+#     origin: https://$GITHUB_TOKEN@github.com/Moka-Tourisme/moka-billetterie
+#   merges:
+#     - origin $ODOO_VERSION
+#   target: origin $ODOO_VERSION
+
+# moka-depot-vente:
+#   remotes:
+#     origin: https://$GITHUB_TOKEN@github.com/Moka-Tourisme/moka-depot-vente
+#   merges:
+#     - origin $ODOO_VERSION
+#   target: origin $ODOO_VERSION

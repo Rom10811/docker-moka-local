@@ -2,64 +2,50 @@ version: '2.4'
 
 services:
 
-  odoo12:
-    image: registry.yaltik.net/odoo:moka12
-    build:
-      context: .
-      dockerfile: Dockerfile.odoo12
-    command: /bin/true
-
-  pgmoka:
-    build:
-      context: .
-      dockerfile: Dockerfile.postgres.10
+  db:
+    image: postgres:10.6
     environment:
-      POSTGRES_USER: moka
-      POSTGRES_PASSWORD: somethingToChange
-      PGDATA: /opt/odoo/pgdata
+      POSTGRES_USER: odoo
+      POSTGRES_PASSWORD: odoo
+      POSTGRES_DB: postgres
+      PGDATA: /var/lib/postgresql/data/pgdata
     volumes:
-      - pgmokadev:/opt/odoo/pgdata
+      - postgres:/var/lib/postgresql/data/pgdata
 
-  mokatest:
-    init: true
-    stdin_open: true
-    tty: true
+  odoo:
+    image: ghcr.io/moka-mourisme/docker-moka:14.0
     build:
       context: .
-      dockerfile: Dockerfile.test
+      dockerfile: Dockerfile
       args:
         GITHUB_USER: bot-moka
-        GITHUB_TOKEN: e66a8f4995babd16ca7ad139da2182efb0bdcf59
+        GITHUB_TOKEN: _REPLACE_WITH_GITHUB_X_ACCESS_TOKEN_
     environment:
       TZ: Europe/Paris
+      LOG_LEVEL: info
       ADMIN_PASSWORD: admin
-      WAIT_PG: 'true'
-      LIST_DB: 'true'
-      UNACCENT: 'true'
-      LOG_LEVEL: 'info'
-      SERVER_WIDE_MODULES: web,muk_saas_branding
       WORKERS: 2
       LIMIT_TIME_CPU: 240
       LIMIT_TIME_REAL: 360
       LIMIT_MEMORY_SOFT: 5368709120
       LIMIT_MEMORY_HARD: 10737418240
-      PGHOST: pgmoka
-      PGUSER: moka
-      PGPASSWORD: somethingToChange
-      # Custom config
-      # You can add custom odoo.conf lines here
-      CUSTOM_CONFIG: |-
-          [options]
+      # Postgres
+      PGHOST: db
+      PGUSER: odoo
+      PGPASSWORD: odoo
+    init: true
+    tty: true
+    stdin_open: true
     depends_on:
-      - pgmoka
+      - db
     ports:
-      - 127.0.0.1:8840:8069
+      - 8069:8069
     volumes:
-      - mokaodoodev:/home/odoo/data
+      - filestore:/home/odoo/data
       # These modules are loaded with higher priority than the ones in the image
       # If a module has the same name, this one will be used.
       - ./custom_code:/home/odoo/custom/repositories:rw,z
 
 volumes:
-  pgmokadev:
-  mokaodoodev:
+  postgres:
+  filestore:
