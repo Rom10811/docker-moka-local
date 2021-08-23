@@ -8,6 +8,13 @@
     - origin $ODOO_VERSION
   target: origin $ODOO_VERSION
 
+000-backend_theme:
+  remotes:
+    origin: https://$GITHUB_TOKEN@github.com/Moka-Tourisme/backend_theme
+  merges:
+    - origin $ODOO_VERSION
+  target: origin $ODOO_VERSION
+
 # 000-moka-thirdparty:
 #   remotes:
 #     origin: https://$GITHUB_TOKEN@github.com/Moka-Tourisme/moka-thirdparty
