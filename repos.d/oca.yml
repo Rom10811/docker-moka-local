@@ -129,3 +129,9 @@ l10n-france:
   << : *defaults
   remotes:
     origin: https://github.com/OCA/l10n-france
+
+stock-logistics-barcode:
+  << : *defaults
+  remotes:
+    origin: https://github.com/OCA/stock-logistics-barcode
+  target: origin $ODOO_VERSION
