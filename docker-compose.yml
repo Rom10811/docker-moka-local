@@ -13,7 +13,7 @@ services:
       - postgres:/var/lib/postgresql/data/pgdata
 
   odoo:
-    image: ghcr.io/moka-mourisme/docker-moka:14.0
+    image: ghcr.io/moka-mourisme/docker-moka:15.0
     build:
       context: .
       dockerfile: Dockerfile

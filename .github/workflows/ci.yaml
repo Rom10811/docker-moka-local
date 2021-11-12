@@ -3,17 +3,17 @@ name: ci
 on:
   pull_request:
     branches:
-      - "14.0"
+      - "15.0"
   push:
     branches:
-      - "14.0"
+      - "15.0"
 
 jobs:
   build:
     runs-on: ubuntu-latest
     env:
       DOCKER_REPO: moka-tourisme/docker-moka
-      DOCKER_TAG: "14.0"
+      DOCKER_TAG: "15.0"
     steps:
       # Prepare
       - name: Checkout

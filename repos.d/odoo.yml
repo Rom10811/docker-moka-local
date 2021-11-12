@@ -1,0 +1,9 @@
+
+design-themes:
+  defaults:
+    depth: 1
+  remotes:
+    origin: https://github.com/odoo/design-themes
+  target: origin $ODOO_VERSION
+  merges:
+    - origin $ODOO_VERSION
