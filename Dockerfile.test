@@ -15,7 +15,7 @@ USER odoo
 # Install modules
 ARG GITHUB_USER
 ARG GITHUB_TOKEN
-COPY repos.d $RESOURCES/repos.d
+COPY repos.d $RESOURCES/repos.test.d
 RUN autoaggregate --directory $RESOURCES/repos.test.d --install --user --output $SOURCES/repositories
 
 # Additional configs
