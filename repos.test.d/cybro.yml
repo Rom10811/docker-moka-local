@@ -1,0 +1,8 @@
+CybroAddons:
+  defaults:
+    depth: 1
+  remotes:
+    origin: https://github.com/CybroOdoo/CybroAddons
+  target: origin $ODOO_VERSION
+  merges:
+    - origin $ODOO_VERSION
