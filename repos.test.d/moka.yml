@@ -44,3 +44,13 @@
 #   merges:
 #     - origin $ODOO_VERSION
 #   target: origin $ODOO_VERSION
+
+# Remove once Cybro.yml is working
+CybroAddons:
+  defaults:
+    depth: 1
+  remotes:
+    origin: https://github.com/CybroOdoo/CybroAddons
+  target: origin $ODOO_VERSION
+  merges:
+    - origin $ODOO_VERSION
