@@ -8,6 +8,13 @@
 #     - origin $ODOO_VERSION
 #   target: origin $ODOO_VERSION
 
+CybroAddons:
+  remotes:
+    origin: https://$GITHUB_TOKEN@github.com/Moka-Tourisme/CybroAddons
+  merges:
+    - origin $ODOO_VERSION
+  target: origin $ODOO_VERSION
+  
 # backend_theme:
 #   remotes:
 #     origin: https://$GITHUB_TOKEN@github.com/Moka-Tourisme/backend_theme
@@ -44,13 +51,3 @@
 #   merges:
 #     - origin $ODOO_VERSION
 #   target: origin $ODOO_VERSION
-
-# Remove once Cybro.yml is working
-CybroAddons:
-  defaults:
-    depth: 1
-  remotes:
-    origin: https://github.com/CybroOdoo/CybroAddons
-  target: origin $ODOO_VERSION
-  merges:
-    - origin $ODOO_VERSION
