@@ -9,22 +9,22 @@ web:
     - origin $ODOO_VERSION
 
 pos:
-  defaults:
-    depth: 1
   remotes:
     origin: https://github.com/OCA/pos
+    moka: https://github.com/Moka-Tourisme/pos
   target: origin $ODOO_VERSION
   merges:
     - origin $ODOO_VERSION
+    - moka 15.0-mig-pos_event_sale
 
 event:
-  defaults:
-    depth: 1
   remotes:
     origin: https://github.com/OCA/event
+    moka: https://github.com/Moka-Tourisme/pos
   target: origin $ODOO_VERSION
   merges:
     - origin $ODOO_VERSION
+    - moka 15.0-mig-event_session
 
 website:
   defaults:
