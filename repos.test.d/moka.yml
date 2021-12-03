@@ -9,6 +9,8 @@
 #   target: origin $ODOO_VERSION
 
 CybroAddons:
+  defaults:
+    depth: 1
   remotes:
     origin: https://$GITHUB_TOKEN@github.com/Moka-Tourisme/CybroAddons
   merges:
