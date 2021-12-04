@@ -20,7 +20,7 @@ pos:
 event:
   remotes:
     origin: https://github.com/OCA/event
-    moka: https://github.com/Moka-Tourisme/pos
+    moka: https://github.com/Moka-Tourisme/event
   target: origin $ODOO_VERSION
   merges:
     - origin $ODOO_VERSION
