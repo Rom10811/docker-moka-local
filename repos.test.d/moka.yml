@@ -8,15 +8,6 @@
 #     - origin $ODOO_VERSION
 #   target: origin $ODOO_VERSION
 
-CybroAddons:
-  defaults:
-    depth: 1
-  remotes:
-    origin: https://$GITHUB_TOKEN@github.com/Moka-Tourisme/CybroAddons
-  merges:
-    - origin $ODOO_VERSION
-  target: origin $ODOO_VERSION
-  
 # backend_theme:
 #   remotes:
 #     origin: https://$GITHUB_TOKEN@github.com/Moka-Tourisme/backend_theme
