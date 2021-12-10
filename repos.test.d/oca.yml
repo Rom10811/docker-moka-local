@@ -25,6 +25,7 @@ event:
   merges:
     - origin $ODOO_VERSION
     - moka 15.0-mig-event_session
+    - moka 15.0-mig-event_sale_session
 
 website:
   defaults:
