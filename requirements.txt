@@ -1,0 +1,8 @@
+# OCA/connector/component
+cachetools
+
+# OCA/rest-framework/base_rest
+cerberus
+pyquerystring
+parse-accept-language
+apispec>=4.0.0
