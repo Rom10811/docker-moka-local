@@ -1,12 +1,12 @@
-
-web:
-  defaults:
-    depth: 1
+event:
   remotes:
-    origin: https://github.com/OCA/web
+    origin: https://github.com/OCA/event
+    moka: https://github.com/Moka-Tourisme/event
   target: origin $ODOO_VERSION
   merges:
     - origin $ODOO_VERSION
+    - moka 15.0-mig-event_session
+    - moka 15.0-mig-event_sale_session
 
 pos:
   remotes:
@@ -17,15 +17,14 @@ pos:
     - origin $ODOO_VERSION
     - moka 15.0-mig-pos_event_sale
 
-event:
+web:
+  defaults:
+    depth: 1
   remotes:
-    origin: https://github.com/OCA/event
-    moka: https://github.com/Moka-Tourisme/event
+    origin: https://github.com/OCA/web
   target: origin $ODOO_VERSION
   merges:
     - origin $ODOO_VERSION
-    - moka 15.0-mig-event_session
-    - moka 15.0-mig-event_sale_session
 
 website:
   defaults:
