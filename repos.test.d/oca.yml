@@ -1,3 +1,13 @@
+
+connector:
+  defaults:
+    depth: 1
+  remotes:
+    origin: https://github.com/OCA/connector
+  target: origin $ODOO_VERSION
+  merges:
+    - origin $ODOO_VERSION
+
 event:
   remotes:
     origin: https://github.com/OCA/event
@@ -8,6 +18,15 @@ event:
     - moka 15.0-mig-event_session
     - moka 15.0-mig-event_sale_session
 
+l10n-france:
+  defaults:
+    depth: 1
+  remotes:
+    origin: https://github.com/OCA/l10n-france
+  target: origin $ODOO_VERSION
+  merges:
+    - origin $ODOO_VERSION
+
 pos:
   remotes:
     origin: https://github.com/OCA/pos
@@ -16,6 +35,60 @@ pos:
   merges:
     - origin $ODOO_VERSION
     - moka 15.0-mig-pos_event_sale
+
+purchase-workflow:
+  defaults:
+    depth: 1
+  remotes:
+    origin: https://github.com/OCA/purchase-workflow
+  target: origin $ODOO_VERSION
+  merges:
+    - origin $ODOO_VERSION
+
+rest-framework:
+  defaults:
+    depth: 1
+  remotes:
+    origin: https://github.com/OCA/rest-framework
+  target: origin $ODOO_VERSION
+  merges:
+    - origin $ODOO_VERSION
+
+sale-workflow:
+  defaults:
+    depth: 1
+  remotes:
+    origin: https://github.com/OCA/sale-workflow
+  target: origin $ODOO_VERSION
+  merges:
+    - origin $ODOO_VERSION
+
+server-auth:
+  defaults:
+    depth: 1
+  remotes:
+    origin: https://github.com/OCA/server-auth
+  target: origin $ODOO_VERSION
+  merges:
+    - origin $ODOO_VERSION
+
+server-tools:
+  defaults:
+    depth: 1
+  remotes:
+    origin: https://github.com/OCA/server-tools
+  target: origin $ODOO_VERSION
+  merges:
+    - origin $ODOO_VERSION
+
+server-ux:
+  defaults:
+    depth: 1
+  remotes:
+    origin: https://github.com/OCA/server-ux
+  target: origin $ODOO_VERSION
+  merges:
+    - origin $ODOO_VERSION
 
 web:
   defaults:
