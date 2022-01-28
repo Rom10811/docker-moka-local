@@ -38,6 +38,7 @@ pos:
   merges:
     - origin $ODOO_VERSION
     - moka 15.0-mig-pos_event_sale
+    - moka 15.0-add-pos_event_sale_registration_qr_code
 
 purchase-workflow:
   defaults:
