@@ -4,7 +4,7 @@ FROM ghcr.io/odoo-it/docker-odoo:15.0
 ARG ODOO_VERSION=15.0
 ARG ODOO_SOURCE=OCA/OCB
 ARG ODOO_SOURCE_DEPTH=1
-RUN git clone --single-branch --branch $ODOO_VERSION https://github.com/$ODOO_SOURCE $SOURCES/odoo && pip-install-odoo
+RUN git clone --single-branch --depth $ODOO_SOURCE_DEPTH --branch $ODOO_VERSION https://github.com/$ODOO_SOURCE $SOURCES/odoo && pip-install-odoo
 
 # Install project requirements
 USER root
