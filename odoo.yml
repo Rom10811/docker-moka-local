@@ -1,12 +1,11 @@
 ../odoo:
   remotes:
-    origin: https://github.com/OCA/OCB
-    odoo: https://github.com/odoo/odoo
+    origin: https://github.com/odoo/odoo
   target: origin $ODOO_VERSION
   merges:
     - origin $ODOO_VERSION
     # [FIX] event: badge report dates in event's tz
-    - odoo refs/pull/83946/head
+    - origin refs/pull/83946/head
 
 design-themes:
   defaults:
