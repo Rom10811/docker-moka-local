@@ -1,3 +1,13 @@
+../odoo:
+  defaults:
+    depth: 1
+  remotes:
+    origin: https://github.com/odoo/odoo
+  target: origin $ODOO_VERSION
+  merges:
+    - origin $ODOO_VERSION
+    # [FIX] event: badge report dates in event's tz
+    - origin refs/pull/83946/head
 
 design-themes:
   defaults:
