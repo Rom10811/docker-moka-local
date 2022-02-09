@@ -1,6 +1,0 @@
-
-CybroAddons:
-  defaults:
-    depth: 1
-  remotes:
-    origin: https://gitlab.byperiscope.com/moka/odoo
