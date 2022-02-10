@@ -10,4 +10,4 @@ lyra:
     # - origin master
     # - origin refs/pull/16/head # migration to version 15.0
     - pierre 15.0
-  target: origin $ODOO_VERSION
+  target: pierre $ODOO_VERSION

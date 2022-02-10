@@ -6,5 +6,5 @@ lyra:
   remotes:
     origin: https://github.com/petrus-v/odoo-lyra-payment
   merges:
-    - pierre 15.0
+    - origin 15.0
   target: origin $ODOO_VERSION
