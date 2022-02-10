@@ -40,9 +40,9 @@ moka-billetterie:
     - origin $ODOO_VERSION-dev
   target: origin $ODOO_VERSION
 
-# moka-depot-vente:
-#   remotes:
-#     origin: https://$GITHUB_TOKEN@github.com/Moka-Tourisme/moka-depot-vente
-#   merges:
-#     - origin $ODOO_VERSION
-#   target: origin $ODOO_VERSION
+moka-depot-vente:
+  remotes:
+    origin: https://$GITHUB_TOKEN@github.com/Moka-Tourisme/moka-depot-vente
+  merges:
+    - origin $ODOO_VERSION-dev
+  target: origin $ODOO_VERSION
