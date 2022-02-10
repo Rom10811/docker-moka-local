@@ -4,8 +4,7 @@ lyra:
   # and do not follow one odoo community practice the same
   # branch is used for multiple versions
   remotes:
-    origin: https://github.com/lyra/plugin-odoo
+    origin: https://github.com/petrus-v/odoo-lyra-payment
   merges:
-    - origin master
-    - origin refs/pull/16/head # migration to version 15.0
+    - pierre 15.0
   target: origin $ODOO_VERSION
