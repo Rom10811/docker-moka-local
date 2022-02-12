@@ -1,0 +1,10 @@
+
+lyra_officiel:
+  # Module payment_payzen is called payment_lyra in lyra repo
+  # and do not follow one odoo community practice the same
+  # branch is used for multiple versions
+  remotes:
+    origin: https://github.com/lyra/plugin-odoo
+  merges:
+    - origin master
+  target: origin $ODOO_VERSION
