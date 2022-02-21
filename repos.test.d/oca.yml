@@ -7,6 +7,16 @@ connector:
   target: origin $ODOO_VERSION
   merges:
     - origin $ODOO_VERSION
+    
+contract:
+  defaults:
+    depth: 1
+  remotes:
+    origin: https://github.com/OCA/contract
+  target: origin $ODOO_VERSION
+  merges:
+    - origin $ODOO_VERSION
+
 
 event:
   remotes:
