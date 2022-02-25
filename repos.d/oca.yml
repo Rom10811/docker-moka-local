@@ -22,6 +22,7 @@ event:
     - moka 15.0-add-event-registration-code
     - moka 15.0-add-event-registration-mail-compose
     - moka 15.0-add-event-registration-sms-compose
+    - moka 15.0-add-website-qty-readonly
 
 l10n-france:
   defaults:
