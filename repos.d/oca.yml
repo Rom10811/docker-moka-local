@@ -1,4 +1,13 @@
 
+bank-statement-import:
+  defaults:
+    depth: 1
+  remotes:
+    origin: https://github.com/OCA/bank-statement-import
+  target: origin $ODOO_VERSION
+  merges:
+    - origin $ODOO_VERSION
+    
 connector:
   defaults:
     depth: 1
