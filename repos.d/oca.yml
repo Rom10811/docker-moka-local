@@ -116,6 +116,15 @@ server-ux:
   merges:
     - origin $ODOO_VERSION
 
+social:
+  defaults:
+    depth: 1
+  remotes:
+    origin: https://github.com/OCA/social
+  target: origin $ODOO_VERSION
+  merges:
+    - origin $ODOO_VERSION
+
 web:
   defaults:
     depth: 1
