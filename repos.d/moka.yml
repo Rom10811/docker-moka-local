@@ -1,12 +1,12 @@
 # We use 000- to make sure these repositories are loaded before any other
 # in case we have custom duplicates of external addons
 
-# 000-moka-custom:
-#   remotes:
-#     origin: https://$GITHUB_TOKEN@github.com/Moka-Tourisme/moka-custom
-#   merges:
-#     - origin $ODOO_VERSION
-#   target: origin $ODOO_VERSION
+000-moka-custom:
+  remotes:
+    origin: https://$GITHUB_TOKEN@github.com/Moka-Tourisme/moka-custom
+  merges:
+    - origin $ODOO_VERSION
+  target: origin $ODOO_VERSION
 
 # backend_theme:
 #   remotes:
