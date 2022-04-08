@@ -46,3 +46,10 @@ moka-depot-vente:
   merges:
     - origin $ODOO_VERSION-dev
   target: origin $ODOO_VERSION
+
+moka-custom:
+  remotes:
+    origin: https://$GITHUB_TOKEN@github.com/Moka-Tourisme/moka-custom
+  merges:
+    - origin $ODOO_VERSION-dev
+  target: origin $ODOO_VERSION
