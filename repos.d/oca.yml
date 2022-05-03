@@ -8,6 +8,15 @@ account-financial-tools:
   merges:
     - origin $ODOO_VERSION
     
+account-reconcile:
+  defaults:
+    depth: 1
+  remotes:
+    origin: https://github.com/OCA/account-reconcile
+  target: origin $ODOO_VERSION
+  merges:
+    - origin $ODOO_VERSION
+    
 bank-statement-import:
   defaults:
     depth: 1
