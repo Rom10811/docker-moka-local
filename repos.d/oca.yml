@@ -34,6 +34,24 @@ connector:
   target: origin $ODOO_VERSION
   merges:
     - origin $ODOO_VERSION
+    
+contract:
+  defaults:
+    depth: 1
+  remotes:
+    origin: https://github.com/OCA/contract
+  target: origin $ODOO_VERSION
+  merges:
+    - origin $ODOO_VERSION
+
+crm:
+  defaults:
+    depth: 1
+  remotes:
+    origin: https://github.com/OCA/crm
+  target: origin $ODOO_VERSION
+  merges:
+    - origin $ODOO_VERSION
 
 event:
   remotes:
@@ -50,6 +68,15 @@ event:
     - moka 15.0-add-event-registration-mail-compose
     - moka 15.0-add-event-registration-sms-compose
     - moka 15.0-add-website-qty-readonly
+
+mis-builder:
+  defaults:
+    depth: 1
+  remotes:
+    origin: https://github.com/OCA/mis-builder
+  target: origin $ODOO_VERSION
+  merges:
+    - origin $ODOO_VERSION
 
 l10n-france:
   defaults:
@@ -71,6 +98,15 @@ pos:
     - moka 15.0-pos-event-session
     - moka 15.0-add-pos_event_sale_registration_qr_code
 
+project:
+  defaults:
+    depth: 1
+  remotes:
+    origin: https://github.com/OCA/project
+  target: origin $ODOO_VERSION
+  merges:
+    - origin $ODOO_VERSION
+    
 purchase-workflow:
   defaults:
     depth: 1
@@ -130,6 +166,15 @@ social:
     depth: 1
   remotes:
     origin: https://github.com/OCA/social
+  target: origin $ODOO_VERSION
+  merges:
+    - origin $ODOO_VERSION
+    
+timesheet:
+  defaults:
+    depth: 1
+  remotes:
+    origin: https://github.com/OCA/timesheet
   target: origin $ODOO_VERSION
   merges:
     - origin $ODOO_VERSION
