@@ -107,14 +107,30 @@ server-auth:
   merges:
     - origin $ODOO_VERSION
 
-server-tools:
+server-env:
   defaults:
     depth: 1
+  remotes:
+    origin: https://github.com/OCA/server-env
+  target: origin $ODOO_VERSION
+  merges:
+    - origin $ODOO_VERSION
+
+server-tools:
   remotes:
     origin: https://github.com/OCA/server-tools
   target: origin $ODOO_VERSION
   merges:
     - origin $ODOO_VERSION
+    - origin refs/pull/2340/head # MIG iap_alternative_provider
+
+connector-telephony:
+  remotes:
+    origin: https://github.com/OCA/connector-telephony
+  target: origin $ODOO_VERSION
+  merges:
+    - origin $ODOO_VERSION
+    - origin refs/pull/270/head # ADD sms_sendinblue_http
 
 server-ux:
   defaults:
