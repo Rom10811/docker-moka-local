@@ -99,15 +99,6 @@ server-auth:
   merges:
     - origin $ODOO_VERSION
 
-server-env:
-  defaults:
-    depth: 1
-  remotes:
-    origin: https://github.com/OCA/server-env
-  target: origin $ODOO_VERSION
-  merges:
-    - origin $ODOO_VERSION
-
 server-tools:
   remotes:
     origin: https://github.com/OCA/server-tools
