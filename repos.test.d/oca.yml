@@ -34,13 +34,13 @@ event:
   target: origin $ODOO_VERSION
   merges:
     - origin $ODOO_VERSION
+    - origin refs/pull/257/head
+    - origin refs/pull/258/head
+    - origin refs/pull/260/head
     - moka 15.0-mig-event_session
     - moka 15.0-mig-event_sale_session
     - moka 15.0-add-website-event-session
     - moka 15.0-add-website-event-sale-session
-    - moka 15.0-add-event-registration-mail-compose
-    - moka 15.0-add-event-registration-sms-compose
-    - moka 15.0-add-website-qty-readonly
 
 l10n-france:
   defaults:
@@ -58,9 +58,9 @@ pos:
   target: origin $ODOO_VERSION
   merges:
     - origin $ODOO_VERSION
-    - moka 15.0-mig-pos_event_sale
+    - origin refs/pull/791/head
+    - origin refs/pull/792/head
     - moka 15.0-pos-event-session
-    - moka 15.0-add-pos_event_sale_registration_qr_code
 
 purchase-workflow:
   defaults:
