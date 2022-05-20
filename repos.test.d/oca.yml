@@ -38,7 +38,6 @@ event:
     - moka 15.0-mig-event_sale_session
     - moka 15.0-add-website-event-session
     - moka 15.0-add-website-event-sale-session
-    - moka 15.0-add-event-registration-code
     - moka 15.0-add-event-registration-mail-compose
     - moka 15.0-add-event-registration-sms-compose
     - moka 15.0-add-website-qty-readonly
