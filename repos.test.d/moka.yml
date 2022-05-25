@@ -53,6 +53,13 @@ moka-custom:
   merges:
     - origin $ODOO_VERSION-dev
   target: origin $ODOO_VERSION
+  
+moka-pos:
+  remotes:
+    origin: https://$GITHUB_TOKEN@github.com/Moka-Tourisme/moka-pos
+  merges:
+    - origin $ODOO_VERSION
+  target: origin $ODOO_VERSION
 
 payment:
   remotes:
