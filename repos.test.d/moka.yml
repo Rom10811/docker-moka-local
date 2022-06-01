@@ -26,12 +26,12 @@
 
 # Moka Repositories
 
-# moka-welcome:
-#   remotes:
-#     origin: https://$GITHUB_TOKEN@github.com/Moka-Tourisme/moka-welcome
-#   merges:
-#     - origin $ODOO_VERSION
-#   target: origin $ODOO_VERSION
+moka-welcome:
+  remotes:
+    origin: https://$GITHUB_TOKEN@github.com/Moka-Tourisme/moka-welcome
+  merges:
+    - origin $ODOO_VERSION-dev
+  target: origin $ODOO_VERSION
 
 moka-billetterie:
   remotes:
