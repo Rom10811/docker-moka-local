@@ -67,7 +67,6 @@ pos:
   target: origin $ODOO_VERSION
   merges:
     - origin $ODOO_VERSION
-    - origin refs/pull/791/head
     - origin refs/pull/792/head
     - moka 15.0-pos-event-session
 
