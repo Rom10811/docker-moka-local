@@ -1,13 +1,12 @@
 
 account-financial-tools:
-  defaults:
-    depth: 1
   remotes:
     origin: https://github.com/OCA/account-financial-tools
   target: origin $ODOO_VERSION
   merges:
     - origin $ODOO_VERSION
-    
+    - origin refs/pull/1301/head # account_check_deposit
+
 account-reconcile:
   defaults:
     depth: 1
