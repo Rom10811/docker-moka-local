@@ -59,11 +59,11 @@ event:
   target: origin $ODOO_VERSION
   merges:
     - origin $ODOO_VERSION
-    - origin refs/pull/257/head
-    - origin refs/pull/258/head
-    - origin refs/pull/260/head
-    - moka 15.0-mig-event_session
-    - moka 15.0-mig-event_sale_session
+    - origin refs/pull/257/head  # event_registration_mail_compose
+    - origin refs/pull/258/head  # event_registration_sms_compose
+    - origin refs/pull/260/head  # website_event_sale_cart_quantity_readonly
+    - origin refs/pull/275/head  # event_session
+    - origin refs/pull/276/head  # event_sale_session
     - moka 15.0-add-website-event-session
     - moka 15.0-add-website-event-sale-session
 
@@ -199,3 +199,11 @@ website:
   target: origin $ODOO_VERSION
   merges:
     - origin $ODOO_VERSION
+
+e-commerce:
+  remotes:
+    origin: https://github.com/OCA/e-commerce
+  target: origin $ODOO_VERSION
+  merges:
+    - origin $ODOO_VERSION
+    - origin refs/pull/656/head  # website_sale_cart_expire
