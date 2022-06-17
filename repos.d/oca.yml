@@ -1,4 +1,13 @@
 
+account-closing:
+  defaults:
+    depth: 1
+  remotes:
+    origin: https://github.com/OCA/account-closing
+  target: origin $ODOO_VERSION
+  merges:
+    - origin $ODOO_VERSION
+    
 account-financial-tools:
   remotes:
     origin: https://github.com/OCA/account-financial-tools
@@ -33,7 +42,15 @@ connector:
   target: origin $ODOO_VERSION
   merges:
     - origin $ODOO_VERSION
-    
+
+connector-telephony:
+  remotes:
+    origin: https://github.com/OCA/connector-telephony
+  target: origin $ODOO_VERSION
+  merges:
+    - origin $ODOO_VERSION
+    - origin refs/pull/270/head # ADD sms_sendinblue_http
+
 contract:
   defaults:
     depth: 1
@@ -51,6 +68,14 @@ crm:
   target: origin $ODOO_VERSION
   merges:
     - origin $ODOO_VERSION
+
+e-commerce:
+  remotes:
+    origin: https://github.com/OCA/e-commerce
+  target: origin $ODOO_VERSION
+  merges:
+    - origin $ODOO_VERSION
+    - origin refs/pull/656/head  # website_sale_cart_expire
 
 event:
   remotes:
@@ -147,14 +172,6 @@ server-tools:
     - origin $ODOO_VERSION
     - origin refs/pull/2340/head # MIG iap_alternative_provider
 
-connector-telephony:
-  remotes:
-    origin: https://github.com/OCA/connector-telephony
-  target: origin $ODOO_VERSION
-  merges:
-    - origin $ODOO_VERSION
-    - origin refs/pull/270/head # ADD sms_sendinblue_http
-
 server-ux:
   defaults:
     depth: 1
@@ -199,11 +216,3 @@ website:
   target: origin $ODOO_VERSION
   merges:
     - origin $ODOO_VERSION
-
-e-commerce:
-  remotes:
-    origin: https://github.com/OCA/e-commerce
-  target: origin $ODOO_VERSION
-  merges:
-    - origin $ODOO_VERSION
-    - origin refs/pull/656/head  # website_sale_cart_expire
