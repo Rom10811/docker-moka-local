@@ -1,13 +1,21 @@
 
-account-financial-tools:
+account-closing:
   defaults:
     depth: 1
+  remotes:
+    origin: https://github.com/OCA/account-closing
+  target: origin $ODOO_VERSION
+  merges:
+    - origin $ODOO_VERSION
+    
+account-financial-tools:
   remotes:
     origin: https://github.com/OCA/account-financial-tools
   target: origin $ODOO_VERSION
   merges:
     - origin $ODOO_VERSION
-    
+    - origin refs/pull/1301/head # account_check_deposit
+
 account-reconcile:
   defaults:
     depth: 1
@@ -34,7 +42,15 @@ connector:
   target: origin $ODOO_VERSION
   merges:
     - origin $ODOO_VERSION
-    
+
+connector-telephony:
+  remotes:
+    origin: https://github.com/OCA/connector-telephony
+  target: origin $ODOO_VERSION
+  merges:
+    - origin $ODOO_VERSION
+    - origin refs/pull/270/head # ADD sms_sendinblue_http
+
 contract:
   defaults:
     depth: 1
@@ -53,6 +69,14 @@ crm:
   merges:
     - origin $ODOO_VERSION
 
+e-commerce:
+  remotes:
+    origin: https://github.com/OCA/e-commerce
+  target: origin $ODOO_VERSION
+  merges:
+    - origin $ODOO_VERSION
+    - origin refs/pull/656/head  # website_sale_cart_expire
+
 event:
   remotes:
     origin: https://github.com/OCA/event
@@ -60,11 +84,11 @@ event:
   target: origin $ODOO_VERSION
   merges:
     - origin $ODOO_VERSION
-    - origin refs/pull/257/head
-    - origin refs/pull/258/head
-    - origin refs/pull/260/head
-    - moka 15.0-mig-event_session
-    - moka 15.0-mig-event_sale_session
+    - origin refs/pull/257/head  # event_registration_mail_compose
+    - origin refs/pull/258/head  # event_registration_sms_compose
+    - origin refs/pull/260/head  # website_event_sale_cart_quantity_readonly
+    - origin refs/pull/275/head  # event_session
+    - origin refs/pull/276/head  # event_sale_session
     - moka 15.0-add-website-event-session
     - moka 15.0-add-website-event-sale-session
 
@@ -93,8 +117,6 @@ pos:
   target: origin $ODOO_VERSION
   merges:
     - origin $ODOO_VERSION
-    - origin refs/pull/791/head
-    - origin refs/pull/792/head
     - moka 15.0-pos-event-session
 
 project:
@@ -149,14 +171,6 @@ server-tools:
   merges:
     - origin $ODOO_VERSION
     - origin refs/pull/2340/head # MIG iap_alternative_provider
-
-connector-telephony:
-  remotes:
-    origin: https://github.com/OCA/connector-telephony
-  target: origin $ODOO_VERSION
-  merges:
-    - origin $ODOO_VERSION
-    - origin refs/pull/270/head # ADD sms_sendinblue_http
 
 server-ux:
   defaults:

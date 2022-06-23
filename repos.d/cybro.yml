@@ -1,0 +1,9 @@
+#
+# CybroAddons:
+#   defaults:
+#     depth: 1
+#   remotes:
+#     origin: https://github.com/Moka-Tourisme/CybroAddons
+#   merges:
+#     - origin $ODOO_VERSION
+#   target: origin $ODOO_VERSION

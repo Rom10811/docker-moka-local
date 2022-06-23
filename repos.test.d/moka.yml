@@ -74,3 +74,10 @@ moka-role:
   merges:
     - origin $ODOO_VERSION-dev
   target: origin $ODOO_VERSION
+
+moka-project:
+  remotes:
+    origin: https://$GITHUB_TOKEN@github.com/Moka-Tourisme/moka-project
+  merges:
+    - origin $ODOO_VERSION-dev
+  target: origin $ODOO_VERSION
