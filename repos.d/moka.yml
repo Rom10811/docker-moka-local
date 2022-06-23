@@ -60,3 +60,10 @@ payment:
   merges:
     - origin $ODOO_VERSION
   target: origin $ODOO_VERSION
+
+moka-role:
+  remotes:
+    origin: https://$GITHUB_TOKEN@github.com/Moka-Tourisme/moka-role
+  merges:
+    - origin $ODOO_VERSION
+  target: origin $ODOO_VERSION
