@@ -42,6 +42,7 @@ contract:
   target: origin $ODOO_VERSION
   merges:
     - origin $ODOO_VERSION
+    - origin refs/pull/795/head # agreement
 
 
 event:
