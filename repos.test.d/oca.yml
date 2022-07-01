@@ -94,7 +94,14 @@ pos:
   target: origin $ODOO_VERSION
   merges:
     - origin $ODOO_VERSION
-    - moka 15.0-pos-event-session
+    # Prevent common merge conflicts in OCA PRs
+    # Some PRs will cause conflicts due to multiple changes on files like test-requirements.txt
+    # So, before anything else, merge this branch that sets a specific merging strategy.
+    - moka 15.0-fix-git-aggregate
+    # Pending OCA PRs:
+    - origin refs/pull/805/head  # pos_sale_pos_event_sale
+    - origin refs/pull/808/head  # pos_event_sale_session
+    - origin refs/pull/810/head  # pos_sale_pos_event_sale_session
 
 product-pack:
   defaults:
