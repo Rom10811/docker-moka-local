@@ -119,6 +119,15 @@ pos:
     - origin $ODOO_VERSION
     - moka 15.0-pos-event-session
 
+product-pack:
+  defaults:
+    depth: 1
+  remotes:
+    origin: https://github.com/OCA/product-pack
+  target: origin $ODOO_VERSION
+  merges:
+    - origin $ODOO_VERSION
+
 project:
   defaults:
     depth: 1
