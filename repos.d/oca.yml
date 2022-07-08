@@ -200,14 +200,13 @@ server-ux:
     - origin $ODOO_VERSION
 
 social:
-  defaults:
-    depth: 1
   remotes:
     origin: https://github.com/OCA/social
   target: origin $ODOO_VERSION
   merges:
     - origin $ODOO_VERSION
-    
+    - origin refs/pull/933/head  # #1740 fix mail debrand
+
 timesheet:
   defaults:
     depth: 1
