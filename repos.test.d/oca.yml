@@ -175,7 +175,7 @@ web:
 
 website:
   defaults:
-    depth: 1
+#    depth: 1
   remotes:
     origin: https://github.com/OCA/website
   target: origin $ODOO_VERSION
