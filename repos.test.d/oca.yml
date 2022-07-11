@@ -181,6 +181,7 @@ website:
   target: origin $ODOO_VERSION
   merges:
     - origin $ODOO_VERSION
+    - origin refs/pull/892/head # Add CookieFirst
 
 e-commerce:
   remotes:
