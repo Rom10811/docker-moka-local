@@ -78,6 +78,15 @@ l10n-france:
   merges:
     - origin $ODOO_VERSION
 
+partner-contact:
+  defaults:
+    depth: 1
+  remotes:
+    origin: https://github.com/OCA/partner-contact
+  target: origin $ODOO_VERSION
+  merges:
+    - origin $ODOO_VERSION
+
 pos:
   remotes:
     origin: https://github.com/OCA/pos
