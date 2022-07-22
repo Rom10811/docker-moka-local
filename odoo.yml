@@ -6,8 +6,6 @@
     - origin $ODOO_VERSION
     # [FIX] event: badge report dates in event's tz
     - origin refs/pull/83946/head
-    # [FIX] event: do not fail if mail.template is missing
-    - origin refs/pull/92882/head
 
 design-themes:
   defaults:
