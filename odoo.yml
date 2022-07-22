@@ -6,6 +6,8 @@
     - origin $ODOO_VERSION
     # [FIX] event: badge report dates in event's tz
     - origin refs/pull/83946/head
+    # [FIX] website_sale: prevent paying a cancelled website order
+    - origin refs/pull/96549/head
 
 design-themes:
   defaults:
