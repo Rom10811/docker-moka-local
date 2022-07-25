@@ -53,6 +53,13 @@ contract:
     - origin $ODOO_VERSION
     - origin refs/pull/795/head  # agreement
 
+e-commerce:
+  remotes:
+    origin: https://github.com/OCA/e-commerce
+  target: origin $ODOO_VERSION
+  merges:
+    - origin $ODOO_VERSION
+    - origin refs/pull/656/head  # website_sale_cart_expire
 
 event:
   remotes:
@@ -199,11 +206,3 @@ website:
   merges:
     - origin $ODOO_VERSION
     - origin refs/pull/892/head # Add CookieFirst
-
-e-commerce:
-  remotes:
-    origin: https://github.com/OCA/e-commerce
-  target: origin $ODOO_VERSION
-  merges:
-    - origin $ODOO_VERSION
-    - origin refs/pull/656/head  # website_sale_cart_expire
