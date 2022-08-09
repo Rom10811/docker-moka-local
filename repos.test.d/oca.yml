@@ -7,7 +7,16 @@ account-analytic:
   target: origin $ODOO_VERSION
   merges:
     - origin $ODOO_VERSION
-    
+
+agreement:
+  defaults:
+    depth: 1
+  remotes:
+    origin: https://github.com/OCA/agreement
+  target: origin $ODOO_VERSION
+  merges:
+    - origin $ODOO_VERSION
+
 account-closing:
   defaults:
     depth: 1
