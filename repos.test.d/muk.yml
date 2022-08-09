@@ -1,9 +1,9 @@
 
-muk_web:
-  defaults:
-    depth: 1
-  remotes:
-    origin: https://github.com/Moka-Tourisme/muk_web
-  merges:
-    - origin $ODOO_VERSION
-  target: origin $ODOO_VERSION
+#muk_web:
+#  defaults:
+#    depth: 1
+#  remotes:
+#    origin: https://github.com/Moka-Tourisme/muk_web
+#  merges:
+#    - origin $ODOO_VERSION
+#  target: origin $ODOO_VERSION
