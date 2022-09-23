@@ -54,7 +54,7 @@ connector:
     
 contract:
   defaults:
-  depth: 1
+    depth: 1
   remotes:
     origin: https://github.com/OCA/contract
   target: origin $ODOO_VERSION
@@ -216,10 +216,9 @@ web:
 
 website:
   defaults:
-#    depth: 1
+    depth: 1
   remotes:
     origin: https://github.com/OCA/website
   target: origin $ODOO_VERSION
   merges:
     - origin $ODOO_VERSION
-    - origin refs/pull/892/head # Add CookieFirst
