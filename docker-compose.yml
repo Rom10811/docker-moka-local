@@ -7,8 +7,8 @@ services:
       context: .
       dockerfile: Dockerfile
       args:
-        GITHUB_USER: bot-moka
-        GITHUB_TOKEN: e66a8f4995babd16ca7ad139da2182efb0bdcf59
+        GITHUB_USER: User
+        GITHUB_TOKEN: Token
     environment:
       TZ: Europe/Paris
       LOG_LEVEL: info
