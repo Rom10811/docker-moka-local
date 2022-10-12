@@ -1,17 +1,6 @@
 version: '2.4'
 
 services:
-
-  db:
-    image: postgres:10.6
-    environment:
-      POSTGRES_USER: odoo
-      POSTGRES_PASSWORD: odoo
-      POSTGRES_DB: postgres
-      PGDATA: /var/lib/postgresql/data/pgdata
-    volumes:
-      - postgres:/var/lib/postgresql/data/pgdata
-
   odoo:
     image: ghcr.io/moka-mourisme/docker-moka:15.0
     build:
@@ -19,7 +8,7 @@ services:
       dockerfile: Dockerfile
       args:
         GITHUB_USER: bot-moka
-        GITHUB_TOKEN: _REPLACE_WITH_GITHUB_X_ACCESS_TOKEN_
+        GITHUB_TOKEN: e66a8f4995babd16ca7ad139da2182efb0bdcf59
     environment:
       TZ: Europe/Paris
       LOG_LEVEL: info
@@ -39,13 +28,23 @@ services:
     depends_on:
       - db
     ports:
-      - 8069:8069
+      - "8069:8069"
     volumes:
       - filestore:/home/odoo/data
       # These modules are loaded with higher priority than the ones in the image
       # If a module has the same name, this one will be used.
       - ./custom_code:/home/odoo/custom/repositories:rw,z
 
+  db:
+    image: postgres:13
+    environment:
+      - POSTGRES_DB=postgres
+      - POSTGRES_PASSWORD=odoo
+      - POSTGRES_USER=odoo
+      - PGDATA= /var/lib/postgresql/data/pgdata
+    volumes:
+      - postgres:/var/lib/postgresql/data/pgdata
+
 volumes:
-  postgres:
   filestore:
+  postgres:

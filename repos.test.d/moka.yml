@@ -81,3 +81,17 @@ moka-project:
   merges:
     - origin $ODOO_VERSION-dev
   target: origin $ODOO_VERSION
+
+event_portal:
+  remotes:
+    origin: https://$GITHUB_TOKEN@github.com/Rom10811/event_portal
+  merges:
+    - origin $ODOO_VERSION
+  target: origin $ODOO_VERSION
+
+gift_card_custom:
+  remotes:
+    origin: https://$GITHUB_TOKEN@github.com/Rom10811/gift_card_custom
+  merges:
+    - origin $ODOO_VERSION
+  target: origin $ODOO_VERSION
